@@ -1,0 +1,10 @@
+<h1>Editing character</h1>
+
+<% form_for :character, :url => { :action => :edit } do |form| %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+<%= button_to 'Destroy', { :action => 'destroy', :id => @character }, :confirm => 'Are you sure you want to destroy this character?' %>
+
+<%= link_to 'Show', :action => 'show', :id => @character %> |
+<%= link_to 'Back', :action => 'list' %>
