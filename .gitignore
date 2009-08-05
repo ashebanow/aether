@@ -2,4 +2,5 @@ log/*
 tmp/*
 db/schema.rb
 db/development.sqlite3
+development.sqlite3
 db/test.sqlite3
