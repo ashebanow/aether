@@ -1,63 +1,29 @@
--- MySQL Administrator dump 1.4
 --
--- ------------------------------------------------------
--- Server version	4.1.18-standard
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
-
+-- Dumping data for table 'char_classes'
 --
--- Create schema aether_development
---
-
-USE aether_development;
+INSERT INTO 'char_classes' VALUES  (1,'Akashic','1d6');
+INSERT INTO 'char_classes' VALUES (2,'Champion','1d10');
+INSERT INTO 'char_classes' VALUES (3,'Greenbond','1d6');
+INSERT INTO 'char_classes' VALUES (4,'Mage Blade','1d8');
+INSERT INTO 'char_classes' VALUES (5,'Magister','1d6');
+INSERT INTO 'char_classes' VALUES (6,'Oathsworn','1d10');
+INSERT INTO 'char_classes' VALUES (7,'Ritual Warrior','1d10');
+INSERT INTO 'char_classes' VALUES (8,'Runethane','1d6'),
+INSERT INTO 'char_classes' VALUES (9,'Totem Warrior','1d8'),
+INSERT INTO 'char_classes' VALUES (10,'Unfettered','1d8'),
+INSERT INTO 'char_classes' VALUES (12,'Witch','1d6'),
+INSERT INTO 'char_classes' VALUES (13,'Warmain','1d12');
 
 --
--- Dumping data for table `aether_development`.`char_class_skills`
+-- Dumping data for table 'character_char_classes'
 --
-
---
--- Dumping data for table `aether_development`.`char_classes`
---
-INSERT INTO `char_classes` VALUES  (1,'Akashic','1d6'),
- (2,'Champion','1d10'),
- (3,'Greenbond','1d6'),
- (4,'Mage Blade','1d8'),
- (5,'Magister','1d6'),
- (6,'Oathsworn','1d10'),
- (7,'Ritual Warrior','1d10'),
- (8,'Runethane','1d6'),
- (9,'Totem Warrior','1d8'),
- (10,'Unfettered','1d8'),
- (12,'Witch','1d6'),
- (13,'Warmain','1d12');
-
---
--- Dumping data for table `aether_development`.`character_char_classes`
---
-INSERT INTO `character_char_classes` VALUES  (1,1,13,7),
+INSERT INTO 'character_char_classes' VALUES  (1,1,13,7),
  (2,1,7,1);
 
 --
--- Dumping data for table `aether_development`.`character_feats`
+-- Dumping data for table 'character_props'
 --
-
---
--- Dumping data for table `aether_development`.`character_items`
---
-
---
--- Dumping data for table `aether_development`.`character_props`
---
-INSERT INTO `character_props` VALUES  (1,1,4,8,NULL,0.0),
+INSERT INTO 'character_props' VALUES  (1,1,4,8,NULL,0.0),
  (2,1,1,18,NULL,0.0),
  (3,1,2,12,NULL,0.0),
  (4,1,3,14,NULL,0.0),
@@ -66,26 +32,14 @@ INSERT INTO `character_props` VALUES  (1,1,4,8,NULL,0.0),
  (7,1,6,8,NULL,0.0);
 
 --
--- Dumping data for table `aether_development`.`character_skills`
+-- Dumping data for table 'characters'
 --
+INSERT INTO 'characters' VALUES  (1,1,'Joe Swordfighter',1,NULL,NULL,'2006-05-06 10:59:38','2006-06-03 19:54:24','Brown','Blue','Pale','Male',32,68,220,'Eardon');
 
 --
--- Dumping data for table `aether_development`.`characters`
+-- Dumping data for table 'feats'
 --
-INSERT INTO `characters` VALUES  (1,1,'Joe Swordfighter',1,NULL,NULL,'2006-05-06 10:59:38','2006-06-03 19:54:24','Brown','Blue','Pale','Male',32,68,220,'Eardon');
-
---
--- Dumping data for table `aether_development`.`combat_rite_props`
---
-
---
--- Dumping data for table `aether_development`.`combat_rites`
---
-
---
--- Dumping data for table `aether_development`.`feats`
---
-INSERT INTO `feats` VALUES  (1,'Ability Focus','Feat',NULL,NULL),
+INSERT INTO 'feats' VALUES  (1,'Ability Focus','Feat',NULL,NULL),
  (2,'Aid Spellcasting','Feat',NULL,NULL),
  (3,'Armor Proficiency, Exotic','Feat',NULL,NULL),
  (4,'Armor Proficiency, Heavy','Feat',NULL,NULL),
@@ -110,7 +64,7 @@ INSERT INTO `feats` VALUES  (1,'Ability Focus','Feat',NULL,NULL),
  (23,'Great Fortitude','Feat',NULL,NULL),
  (24,'Improved Bull Rush','Feat',NULL,NULL),
  (25,'Improved Critical','Feat',NULL,NULL);
-INSERT INTO `feats` VALUES  (26,'Improved Disarm','Feat',NULL,NULL),
+INSERT INTO 'feats' VALUES  (26,'Improved Disarm','Feat',NULL,NULL),
  (27,'Improved Initiative','Feat',NULL,NULL),
  (28,'Improved Sunder','Feat',NULL,NULL),
  (29,'Improved Trip','Feat',NULL,NULL),
@@ -135,7 +89,7 @@ INSERT INTO `feats` VALUES  (26,'Improved Disarm','Feat',NULL,NULL),
  (48,'Shield Specialization','Feat',NULL,NULL),
  (49,'Shot on the Run','Feat',NULL,NULL),
  (50,'Skill Focus','Feat',NULL,NULL);
-INSERT INTO `feats` VALUES  (51,'Speed Burst','Feat',NULL,NULL),
+INSERT INTO 'feats' VALUES  (51,'Speed Burst','Feat',NULL,NULL),
  (52,'Stomp','Feat',NULL,NULL),
  (53,'Stunning Blow','Feat',NULL,NULL),
  (54,'Sturdy','Feat',NULL,NULL),
@@ -158,7 +112,7 @@ INSERT INTO `feats` VALUES  (51,'Speed Burst','Feat',NULL,NULL),
  (71,'Bonded Item','CeremonialFeat',NULL,NULL),
  (72,'Brandish Magical Might','CeremonialFeat',NULL,NULL),
  (73,'Chi-Julud','CeremonialFeat',NULL,NULL);
-INSERT INTO `feats` VALUES  (74,'Corrupt Mage','CeremonialFeat',NULL,NULL),
+INSERT INTO 'feats' VALUES  (74,'Corrupt Mage','CeremonialFeat',NULL,NULL),
  (75,'Creator Mage','CeremonialFeat',NULL,NULL),
  (76,'Crippling Strike','CeremonialFeat',NULL,NULL),
  (77,'Defensive Roll','CeremonialFeat',NULL,NULL),
@@ -179,7 +133,7 @@ INSERT INTO `feats` VALUES  (74,'Corrupt Mage','CeremonialFeat',NULL,NULL),
  (92,'Mighty Hurl','CeremonialFeat',NULL,NULL),
  (93,'Mirror Sight','CeremonialFeat',NULL,NULL),
  (94,'Opportunist','CeremonialFeat',NULL,NULL);
-INSERT INTO `feats` VALUES  (95,'Peaceful Mage','CeremonialFeat',NULL,NULL),
+INSERT INTO 'feats' VALUES  (95,'Peaceful Mage','CeremonialFeat',NULL,NULL),
  (96,'Power of the Name','CeremonialFeat',NULL,NULL),
  (97,'Priest','CeremonialFeat',NULL,NULL),
  (98,'Psion','CeremonialFeat',NULL,NULL),
@@ -200,7 +154,7 @@ INSERT INTO `feats` VALUES  (95,'Peaceful Mage','CeremonialFeat',NULL,NULL),
  (113,'Weapon Specialization','CeremonialFeat',NULL,NULL),
  (114,'Whirlwind Attack','CeremonialFeat',NULL,NULL),
  (115,'Wild Mage','CeremonialFeat',NULL,NULL);
-INSERT INTO `feats` VALUES  (116,'Craft Charged Item','ItemCreationFeat',NULL,NULL),
+INSERT INTO 'feats' VALUES  (116,'Craft Charged Item','ItemCreationFeat',NULL,NULL),
  (117,'Craft Constant Item','ItemCreationFeat',NULL,NULL),
  (118,'Craft Magic Arms and Armor','ItemCreationFeat',NULL,NULL),
  (119,'Craft Single-Use Item','ItemCreationFeat',NULL,NULL),
@@ -220,7 +174,7 @@ INSERT INTO `feats` VALUES  (116,'Craft Charged Item','ItemCreationFeat',NULL,NU
  (133,'Night Owl','TalentFeat',NULL,NULL),
  (134,'Resistance to Disease','TalentFeat',NULL,NULL),
  (135,'Resistance to Magic','TalentFeat',NULL,NULL);
-INSERT INTO `feats` VALUES  (136,'Resistance to Poison','TalentFeat',NULL,NULL),
+INSERT INTO 'feats' VALUES  (136,'Resistance to Poison','TalentFeat',NULL,NULL),
  (137,'Sensitive','TalentFeat',NULL,NULL),
  (138,'Signature Spell','TalentFeat',NULL,NULL),
  (139,'Spell Affinity','TalentFeat',NULL,NULL),
@@ -231,17 +185,9 @@ INSERT INTO `feats` VALUES  (136,'Resistance to Poison','TalentFeat',NULL,NULL),
  (144,'Wealthy','TalentFeat',NULL,NULL);
 
 --
--- Dumping data for table `aether_development`.`item_props`
+-- Dumping data for table 'props'
 --
-
---
--- Dumping data for table `aether_development`.`items`
---
-
---
--- Dumping data for table `aether_development`.`props`
---
-INSERT INTO `props` VALUES  (1,'Strength','STR','I'),
+INSERT INTO 'props' VALUES  (1,'Strength','STR','I'),
  (2,'Dexterity','DEX','I'),
  (3,'Constitution','CON','I'),
  (4,'Intelligence','INT','I'),
@@ -270,15 +216,15 @@ INSERT INTO `props` VALUES  (1,'Strength','STR','I'),
  (28,'Climb Speed','Climb Spd','I'),
  (29,'Caster Level','Cast Lvl','I'),
  (30,'Caster Key Ability','Cast Key Abil','I');
-INSERT INTO `props` VALUES  (31,'Max Spell Level -- Complex','Max Spell Lvl','I'),
+INSERT INTO 'props' VALUES  (31,'Max Spell Level -- Complex','Max Spell Lvl','I'),
  (32,'Wound Points','Wounds','I'),
  (33,'Subdual Damage','Subdual','I'),
  (34,'Spell Resistance','SR','I');
 
 --
--- Dumping data for table `aether_development`.`races`
+-- Dumping data for table 'races'
 --
-INSERT INTO `races` VALUES  (2,'Dracha'),
+INSERT INTO 'races' VALUES  (2,'Dracha'),
  (3,'Faen'),
  (4,'Giant'),
  (1,'Human'),
@@ -289,13 +235,9 @@ INSERT INTO `races` VALUES  (2,'Dracha'),
  (9,'Verrik');
 
 --
--- Dumping data for table `aether_development`.`skill_props`
+-- Dumping data for table 'skills'
 --
-
---
--- Dumping data for table `aether_development`.`skills`
---
-INSERT INTO `skills` VALUES  (1,'Alchemy',4,1,NULL),
+INSERT INTO 'skills' VALUES  (1,'Alchemy',4,1,NULL),
  (2,'Appraise',4,0,NULL),
  (3,'Balance',2,0,'misc_bonus += 2 if (character.skills[\"Tumble\"].ranks >= 5);'),
  (4,'Bluff',6,0,NULL),
@@ -316,7 +258,7 @@ INSERT INTO `skills` VALUES  (1,'Alchemy',4,1,NULL),
  (19,'Jump',1,0,'misc_bonus += 2 if (character.skills[\"Tumble\"].ranks >= 5);'),
  (20,'Knowledge (Architecture)',4,1,NULL),
  (21,'Knowledge (Ceremony)',4,1,NULL);
-INSERT INTO `skills` VALUES  (22,'Knowledge (Cosmology)',4,1,NULL),
+INSERT INTO 'skills' VALUES  (22,'Knowledge (Cosmology)',4,1,NULL),
  (23,'Knowledge (Dangerous Beasts)',4,1,NULL),
  (24,'Knowledge (Dracha)',4,1,NULL),
  (25,'Knowledge (Dragons)',4,1,NULL),
@@ -342,7 +284,7 @@ INSERT INTO `skills` VALUES  (22,'Knowledge (Cosmology)',4,1,NULL),
  (45,'Perform',6,0,NULL),
  (46,'Ride',2,0,'misc_bonus += 2 if (character.skills[\"Handle Animal\"].ranks >= 5);'),
  (47,'Search',4,0,NULL);
-INSERT INTO `skills` VALUES  (48,'Sense Motive',5,0,NULL),
+INSERT INTO 'skills' VALUES  (48,'Sense Motive',5,0,NULL),
  (49,'Sleight of Hand',2,1,'misc_bonus += 2 if (character.skills[\"Bluff\"].ranks >= 5);'),
  (50,'Sneak',2,0,NULL),
  (51,'Speak Language',1,1,NULL),
@@ -355,13 +297,6 @@ INSERT INTO `skills` VALUES  (48,'Sense Motive',5,0,NULL),
  (58,'Use Rope',2,0,NULL);
 
 --
--- Dumping data for table `aether_development`.`users`
+-- Dumping data for table'users'
 --
-INSERT INTO `users` VALUES  (1,'ashebanow','ashebanow@cattivi.com','28f4a10844e5ed31c71a1f57a28ad89fcd10eb1e','bc4a6c8d8eb26aca3cce44ff7d48f599da703e30','2006-06-03 12:01:47','2006-06-03 19:51:10','Andrew Shebanow');
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+INSERT INTO 'users' VALUES  (1,'ashebanow','ashebanow@cattivi.com','28f4a10844e5ed31c71a1f57a28ad89fcd10eb1e','bc4a6c8d8eb26aca3cce44ff7d48f599da703e30','2006-06-03 12:01:47','2006-06-03 19:51:10','Andrew Shebanow');
