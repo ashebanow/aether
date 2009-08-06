@@ -295,8 +295,3 @@ INSERT INTO 'skills' VALUES  (48,'Sense Motive',5,0,NULL),
  (56,'Tumble',2,1,'misc_bonus += 2 if (character.skills[\"Jump\"].ranks >= 5);'),
  (57,'Use Magic Device',6,1,NULL),
  (58,'Use Rope',2,0,NULL);
-
---
--- Dumping data for table'users'
---
-INSERT INTO 'users' VALUES  (1,'ashebanow','ashebanow@cattivi.com','28f4a10844e5ed31c71a1f57a28ad89fcd10eb1e','bc4a6c8d8eb26aca3cce44ff7d48f599da703e30','2006-06-03 12:01:47','2006-06-03 19:51:10','Andrew Shebanow');

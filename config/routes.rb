@@ -1,11 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.rubyamf_gateway 'rubyamf_gateway', :controller => 'rubyamf', :action => 'gateway'
-
-  map.resources :roles
-
-  map.resources :users
-
-  map.resource :session
+  map.resource :account, :controller => "users"
+  map.resource :user_session
+  map.root :controller => "user_sessions", :action => "new" # optional, this just sets the root route
 
   map.resources :characters
 
