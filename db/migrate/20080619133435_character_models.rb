@@ -164,23 +164,24 @@ class CharacterModels < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :characters
-    drop_table :char_class_skills
-    drop_table :char_classes
     drop_table :character_char_classes
     drop_table :character_feats
     drop_table :character_items
-    drop_table :character_props
     drop_table :character_skills
+    drop_table :character_props
     drop_table :characters
+
     drop_table :combat_rite_props
+    drop_table :item_props
+    drop_table :skill_props
+    drop_table :props
+
+    drop_table :char_class_skills
+    drop_table :char_classes
     drop_table :combat_rites
     drop_table :feats
-    drop_table :item_props
     drop_table :items
-    drop_table :props
     drop_table :races
-    drop_table :skill_props
     drop_table :skills
   end
 end
