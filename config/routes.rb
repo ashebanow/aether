@@ -7,5 +7,5 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :characters
 
-  map.root :controller => "user_sessions", :action => "new"
+  map.root :controller => "characters", :action => "index"
 end

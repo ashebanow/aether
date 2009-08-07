@@ -22,7 +22,7 @@
                     </td>
                     <td width="10%" class="CharSheetFieldName">Player</td>
                     <td width="40%" colspan="2" class="CharSheetFieldValueLeft">
-                      <%= h(current_user.name) %>
+                      <%= h(@user.login) %>
                     </td>
                   </tr>
                   <tr>
@@ -72,21 +72,21 @@
                     <td colspan="10" class="CharSheetFieldName"><hr /></td>
                   </tr>
                   <%
-                  if @character.character_char_classes.size > 0
-                    for char_char_class in @character.character_char_classes
+                  if ! @character.char_classes.empty?
+                    for char_class in @character.char_classes
                   -%>
                       <tr>
                         <td colspan="2" class="CharSheetFieldName"><b>Character Class</b></td>
                         <td colspan="4" class="CharSheetFieldValueLeft">
-                          <%= h(char_char_class.char_class.name) %>
+                          <%= h(char_class.name) %>
                         </td>
                         <td class="CharSheetFieldName"><b>Hit Die</b></td>
                         <td class="CharSheetFieldValue">
-                          <%= h(char_char_class.char_class.hit_die) %>
+                          <%= h(char_class.hit_die) %>
                         </td>
                         <td class="CharSheetFieldName"><b>Level</b></td>
                         <td class="CharSheetFieldValue">
-                          <%= h(char_char_class.level) %>
+                          <%= h(char_class.level) %>
                         </td>
                       </tr>
                   <%
@@ -457,6 +457,6 @@
 </table>
 
 <br />
-<%= link_to 'Edit', :action => 'edit', :id => @character %> |
-<%= link_to 'Back', :action => 'list' %>
 
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>
