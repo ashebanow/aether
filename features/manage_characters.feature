@@ -14,3 +14,5 @@ Feature: Manage save_characters
     And I fill in the character information
     And I click Save
     Then I should see my new character in the list
+
+  Scenario: I should only be able to see characters I created
