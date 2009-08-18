@@ -4,3 +4,4 @@ db/schema.rb
 db/*.sqlite3
 .idea/*
 .sass-cache/*
+public/stylesheets/.sass-cache/*

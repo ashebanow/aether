@@ -1,14 +1,14 @@
 body {
+  margin: 10px 0 0 0;
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: helvetica, verdana, arial, sans-serif;
   font-size: 13px;
   line-height: 18px; }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px; }
+p {
+  color: #000;
+  margin: 0 0 10px 0; }
 
 pre {
   background-color: #eee;
@@ -22,6 +22,58 @@ a {
   a:hover {
     color: #fff;
     background-color: #000; }
+
+/* 12 cols, 60 pixels each, 10 pixel gutter */
+.grid_1 {
+  width: 60px; }
+
+.grid_2 {
+  width: 130px; }
+
+.grid_3 {
+  width: 200px; }
+
+.grid_4 {
+  width: 270px; }
+
+.grid_5 {
+  width: 340px; }
+
+.grid_6 {
+  width: 410px; }
+
+.grid_7 {
+  width: 480px; }
+
+.grid_8 {
+  width: 550px; }
+
+.grid_9 {
+  width: 620px; }
+
+.grid_10 {
+  width: 690px; }
+
+.grid_11 {
+  width: 760px; }
+
+.grid_12 {
+  width: 830px; }
+
+.column {
+  margin: 0 !gutter_margin;
+  overflow: hidden;
+  float: left;
+  display: inline; }
+
+.row {
+  width: !row_width;
+  margin: 0 auto;
+  overflow: hidden; }
+  .row .row {
+    margin: 0 -!gutter_margin;
+    width: auto;
+    display: inline-block; }
 
 .fieldWithErrors {
   padding: 2px;
