@@ -1,0 +1,36 @@
+!!! XML
+!!!
+%html
+  %head
+    %title= @browser_title || 'Default Browser Title'
+
+    = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'compiled/print.css', :media => 'print'
+    /[if IE]
+      = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+
+    = stylesheet_link_tag 'compiled/styles.css'
+  %body{ :class => "bp three-col showgrid" }
+    #container
+      #header
+        %h1
+          AEther: Arcana Evolved Character Editor
+        %ul#header_links
+          %li= link_to "Source code", "http://github.com/ashebanow/aether"
+
+      #sidebar
+        %p
+          This is a sidebar
+
+      #content
+        = yield
+
+      #footer
+        %ul#footer_links
+          - if !current_user
+            %li{:class => "first"}= link_to "Register", new_account_path
+            %li= link_to "Log In", new_user_session_path
+            %li{:class => "last"}= link_to "Forgot password", new_password_reset_path
+          - else
+            %li{:class => "first"}= link_to "My Account", account_path
+            %li{:class => "last"}= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure?"

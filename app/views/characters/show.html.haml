@@ -1,0 +1,8 @@
+= render :partial => "character", :object => @character
+
+#actions
+  = link_to 'Edit', edit_character_path(@character)
+  |
+  = link_to 'Destroy', @character, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to 'Back', characters_path

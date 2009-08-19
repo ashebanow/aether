@@ -1,0 +1,10 @@
+%h2 Your characters await!
+
+%ul#characters
+  - for character in @characters
+    %li.character
+      .content
+        = render :partial => "character", :object => character
+
+.tools
+  = link_to 'New character', new_character_path

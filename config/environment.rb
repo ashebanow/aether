@@ -15,11 +15,10 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
-  # config.gem "bj"
-  # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
-  # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "sqlite3-ruby", :lib => "sqlite3"
+
   config.gem "haml"
+
   config.gem "authlogic"
   config.gem "authlogic-oid", :lib => "authlogic_openid"
 
