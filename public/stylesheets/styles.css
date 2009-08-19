@@ -24,6 +24,7 @@ a {
     background-color: #000; }
 
 /* adaptation of The 1KB CSS Grid to sass (http://www.1kbgrid.com/). I love Sass. */
+
 .grid_1 {
   width: 60px; }
 
@@ -71,7 +72,7 @@ a {
   margin: 0 auto;
   overflow: hidden; }
   .row .row {
-    margin: 0 -5px;
+    margin: -5px;
     width: auto;
     display: inline-block; }
 
