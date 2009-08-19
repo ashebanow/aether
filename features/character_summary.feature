@@ -30,3 +30,10 @@ Feature: See a summary of my character
   Scenario: See initiative bonus
   
   Scenario: Roll initiative
+
+  Scenario: See saving throws
+  
+  Scenario: Roll a saving throw
+
+  Scenario: See movement statistics
+
