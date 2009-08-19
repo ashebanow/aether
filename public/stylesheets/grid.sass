@@ -1,0 +1,30 @@
+/* adaptation of The 1KB CSS Grid to sass (http://www.1kbgrid.com/). I love Sass.
+
+// example here is 12 cols, 60 pixels each, 10 pixel gutter, but just change these three variables to make it your own
+!num_columns = 12
+!column_width = 60px
+!gutter = 10px
+
+// calculated values
+!gutter_margin = !gutter / 2
+!total_column_width = !column_width + !gutter
+!row_width = !total_column_width * !num_columns
+
+@for !i from 1 through !num_columns
+  .grid_#{!i}
+    width = (!total_column_width * !i) - !gutter
+      
+.column
+  margin = "0 #{!gutter_margin}"
+  overflow = "hidden"
+  float = "left"
+  display = "inline"
+
+.row
+  width = !row_width
+  margin = "0 auto"
+  overflow = "hidden"
+  .row
+    margin = "0 #{-!gutter_margin}"
+    width = "auto"
+    display = "inline-block"

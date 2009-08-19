@@ -23,7 +23,7 @@ a {
     color: #fff;
     background-color: #000; }
 
-/* 12 cols, 60 pixels each, 10 pixel gutter */
+/* adaptation of The 1KB CSS Grid to sass (http://www.1kbgrid.com/). I love Sass. */
 .grid_1 {
   width: 60px; }
 
@@ -61,17 +61,17 @@ a {
   width: 830px; }
 
 .column {
-  margin: 0 !gutter_margin;
+  margin: 0 5px;
   overflow: hidden;
   float: left;
   display: inline; }
 
 .row {
-  width: !row_width;
+  width: 840px;
   margin: 0 auto;
   overflow: hidden; }
   .row .row {
-    margin: 0 -!gutter_margin;
+    margin: 0 -5px;
     width: auto;
     display: inline-block; }
 
