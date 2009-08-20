@@ -64,7 +64,7 @@ body.bp .first { margin-left: 0; padding-left: 0; }
 body.bp .last { margin-right: 0; padding-right: 0; }
 body.bp .top { margin-top: 0; padding-top: 0; }
 body.bp .bottom { margin-bottom: 0; padding-bottom: 0; }
-body.bp .showgrid { background: url('/images/grid.png?1250705850'); }
+body.bp .showgrid { background: url('/images/grid.png?1250733111'); }
 body.bp .error { padding: .8em; margin-bottom: 1em; border: 2px solid #dddddd; background: #fbe3e4; color: #8a1f11; border-color: #fbc2c4; }
 body.bp .error a { color: #8a1f11; }
 body.bp .notice { padding: .8em; margin-bottom: 1em; border: 2px solid #dddddd; background: #fff6bf; color: #514721; border-color: #ffd324; }
@@ -92,9 +92,10 @@ form.bp textarea { width: 390px; height: 250px; }
 
 body.three-col #container { width: 950px; margin: 0 auto; overflow: hidden; display: inline-block; }
 body.three-col #container { display: block; }
-body.three-col #container #header { display: inline; float: left; margin-right: 10px; width: 950px; }
+body.three-col #container #header { display: inline; float: left; margin-right: 10px; width: 710px; margin-bottom: 20px; }
 * html body.three-col #container #header { overflow-x: hidden; }
-body.three-col #container #header #header_links { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }
+body.three-col #container #header #header_links { display: inline; float: left; margin-right: 0; width: 230px; padding-left: 720px; align: right; margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }
+* html body.three-col #container #header #header_links { overflow-x: hidden; }
 body.three-col #container #header #header_links { display: block; }
 body.three-col #container #header #header_links li { list-style-type: none; margin-left: 0px; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
 body.three-col #container #header #header_links li.first { padding-left: 0px; }
@@ -103,6 +104,13 @@ body.three-col #container #header #header_links a { text-decoration: none; }
 body.three-col #container #header #header_links a:hover { text-decoration: underline; }
 body.three-col #container #content { display: inline; float: left; margin-right: 10px; width: 790px; }
 * html body.three-col #container #content { overflow-x: hidden; }
+body.three-col #container #content #actions { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }
+body.three-col #container #content #actions { display: block; }
+body.three-col #container #content #actions li { list-style-type: none; margin-left: 0px; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
+body.three-col #container #content #actions li.first { padding-left: 0px; }
+body.three-col #container #content #actions li.last { padding-right: 0px; }
+body.three-col #container #content #actions a { text-decoration: none; }
+body.three-col #container #content #actions a:hover { text-decoration: underline; }
 body.three-col #container #sidebar { display: inline; float: left; margin-right: 0; width: 150px; }
 * html body.three-col #container #sidebar { overflow-x: hidden; }
 body.three-col #container #sidebar #sidebar_links { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }
@@ -112,7 +120,7 @@ body.three-col #container #sidebar #sidebar_links li.first { padding-left: 0px; 
 body.three-col #container #sidebar #sidebar_links li.last { padding-right: 0px; }
 body.three-col #container #sidebar #sidebar_links a { text-decoration: none; }
 body.three-col #container #sidebar #sidebar_links a:hover { text-decoration: underline; }
-body.three-col #container #footer { display: inline; float: left; margin-right: 10px; width: 950px; }
+body.three-col #container #footer { display: inline; float: left; margin-right: 10px; width: 950px; margin-top: 20px; }
 * html body.three-col #container #footer { overflow-x: hidden; }
 body.three-col #container #footer #footer_links { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }
 body.three-col #container #footer #footer_links { display: block; }

@@ -24,18 +24,29 @@ body.three-col
     +container
 
     #header
-      +column(!blueprint_grid_columns)
+      +column(18)
+      margin-bottom: 20px
+
       #header_links
+        +column(6, true)
+        +prepend(18)
+        :align right
         +horizontal-list
         a
           +hover-link
       
     #content
       +column(20)
+      
+      #actions
+        +horizontal-list
+        a
+          +hover-link
 
     #sidebar
       // true means it's the last column in the row
       +column(4, true)
+
       #sidebar_links
         +horizontal-list
         a
@@ -43,6 +54,8 @@ body.three-col
 
     #footer
       +column(!blueprint_grid_columns)
+      margin-top: 20px
+
       #footer_links
         +horizontal-list
         a
