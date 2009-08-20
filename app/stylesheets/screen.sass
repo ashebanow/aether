@@ -30,16 +30,16 @@ body.three-col
         a
           +hover-link
       
+    #content
+      +column(20)
+
     #sidebar
-      +column(4)
+      // true means it's the last column in the row
+      +column(4, true)
       #sidebar_links
         +horizontal-list
         a
           +hover-link
-
-    #content
-      // true means it's the last column in the row
-      +column(20, true)
 
     #footer
       +column(!blueprint_grid_columns)

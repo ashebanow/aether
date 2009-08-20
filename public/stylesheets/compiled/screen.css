@@ -101,7 +101,9 @@ body.three-col #container #header #header_links li.first { padding-left: 0px; }
 body.three-col #container #header #header_links li.last { padding-right: 0px; }
 body.three-col #container #header #header_links a { text-decoration: none; }
 body.three-col #container #header #header_links a:hover { text-decoration: underline; }
-body.three-col #container #sidebar { display: inline; float: left; margin-right: 10px; width: 150px; }
+body.three-col #container #content { display: inline; float: left; margin-right: 10px; width: 790px; }
+* html body.three-col #container #content { overflow-x: hidden; }
+body.three-col #container #sidebar { display: inline; float: left; margin-right: 0; width: 150px; }
 * html body.three-col #container #sidebar { overflow-x: hidden; }
 body.three-col #container #sidebar #sidebar_links { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }
 body.three-col #container #sidebar #sidebar_links { display: block; }
@@ -110,8 +112,6 @@ body.three-col #container #sidebar #sidebar_links li.first { padding-left: 0px; 
 body.three-col #container #sidebar #sidebar_links li.last { padding-right: 0px; }
 body.three-col #container #sidebar #sidebar_links a { text-decoration: none; }
 body.three-col #container #sidebar #sidebar_links a:hover { text-decoration: underline; }
-body.three-col #container #content { display: inline; float: left; margin-right: 0; width: 790px; }
-* html body.three-col #container #content { overflow-x: hidden; }
 body.three-col #container #footer { display: inline; float: left; margin-right: 10px; width: 950px; }
 * html body.three-col #container #footer { overflow-x: hidden; }
 body.three-col #container #footer #footer_links { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }

@@ -10,7 +10,7 @@
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
 
     = stylesheet_link_tag 'compiled/styles.css'
-  %body{ :class => "bp three-col showgrid" }
+  %body{ :class => "bp three-col" }
     #container
       #header
         %h1
@@ -18,12 +18,12 @@
         %ul#header_links
           %li= link_to "Source code", "http://github.com/ashebanow/aether"
 
+      #content
+        = yield
+
       #sidebar
         %p
           This is a sidebar
-
-      #content
-        = yield
 
       #footer
         %ul#footer_links
