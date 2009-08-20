@@ -1,6 +1,7 @@
 class CharactersController < ApplicationController
   before_filter :require_user
   before_filter :find_user
+  before_filter :find_character_by_id, :except => [:index, :new, :create]
 
   # GET /characters
   # GET /characters.xml
@@ -16,12 +17,59 @@ class CharactersController < ApplicationController
   # GET /characters/1
   # GET /characters/1.xml
   def show
-    @character = Character.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @character }
     end
+  end
+
+  # GET /characters/combat/1
+  # GET /characters/combat/1.xml
+  def combat
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @character }
+    end
+  end
+
+  # GET /characters/feats/1
+  # GET /characters/feats/1.xml
+  def feats
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @character }
+    end
+  end
+
+  # GET /characters/inventory/1
+  # GET /characters/inventory/1.xml
+  def inventory
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @character }
+    end
+  end
+
+  # GET /characters/skills/1
+  # GET /characters/skills/1.xml
+  def skills
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @character }
+    end
+  end
+
+  # GET /characters/spellcasting/1
+  # GET /characters/spellcasting/1.xml
+  def spellcasting
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @character }
+    end
+  end
+
+  # GET /characters/1/edit
+  def edit
   end
 
   # GET /characters/new
@@ -34,11 +82,6 @@ class CharactersController < ApplicationController
       format.html # new.html.erb
       format.xml  { render :xml => @character }
     end
-  end
-
-  # GET /characters/1/edit
-  def edit
-    @character = Character.find(params[:id])
   end
 
   # POST /characters
@@ -62,8 +105,6 @@ class CharactersController < ApplicationController
   # PUT /characters/1
   # PUT /characters/1.xml
   def update
-    @character = Character.find(params[:id])
-
     respond_to do |format|
       if @character.update_attributes(params[:character])
         flash[:notice] = 'Character was successfully updated.'
@@ -79,7 +120,6 @@ class CharactersController < ApplicationController
   # DELETE /characters/1
   # DELETE /characters/1.xml
   def destroy
-    @character = Character.find(params[:id])
     @character.destroy
 
     respond_to do |format|
@@ -92,6 +132,11 @@ private
 
   def find_user
     @user = current_user
+  end
+  
+  def find_character_by_id
+    @character = Character.find(params[:id])
+    # FIXME: make sure this user owns the character
   end
 
 end
