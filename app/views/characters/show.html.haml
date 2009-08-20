@@ -1,5 +1,20 @@
 %h1= h(@character.name)
 
+#character_attributes
+  %p#character_class_summary= char_class_summary @character
+  - if @character.race
+    %p= "Race: " + h(@character.race.name)
+  -else
+    %p Race: Unknown
+  %p= "Hair: " + h(@character.hair_color)
+  %p= "Eyes: " + h(@character.eye_color)
+  %p= "Skin: " + h(@character.skin_color)
+  %p= "Sex: " + h(@character.gender)
+  %p= "Age: " + h(@character.age)
+  %p= "Height: " + h(@character.height)
+  %p= "Weight: " + h(@character.weight)
+  %p= "Homeland: " + h(@character.homeland)
+
 %ul#actions
   %li{:class => "first"}= link_to 'Edit', edit_character_path(@character)
   %li= link_to 'Destroy', @character, :confirm => 'Are you sure?', :method => :delete

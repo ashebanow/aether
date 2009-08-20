@@ -104,6 +104,8 @@ body.three-col #container #header #header_links a { text-decoration: none; }
 body.three-col #container #header #header_links a:hover { text-decoration: underline; }
 body.three-col #container #content { display: inline; float: left; margin-right: 10px; width: 790px; }
 * html body.three-col #container #content { overflow-x: hidden; }
+body.three-col #container #content #character_attributes { font-size: 9pt; }
+body.three-col #container #content #character_class_summary { font-style: italic; }
 body.three-col #container #content #actions { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }
 body.three-col #container #content #actions { display: block; }
 body.three-col #container #content #actions li { list-style-type: none; margin-left: 0px; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
