@@ -16,6 +16,5 @@
   %p= "Homeland: " + h(@character.homeland)
 
 %ul#actions
-  %li{:class => "first"}= link_to 'Edit', edit_character_path(@character)
-  %li= link_to 'Destroy', @character, :confirm => 'Are you sure?', :method => :delete
+  %li{:class => "first"}= link_to 'Destroy', @character, :confirm => 'Are you sure?', :method => :delete
   %li{:class => "last"}= link_to 'Back', characters_path

@@ -68,10 +68,6 @@ class CharactersController < ApplicationController
     end
   end
 
-  # GET /characters/1/edit
-  def edit
-  end
-
   # GET /characters/new
   # GET /characters/new.xml
   def new
@@ -111,7 +107,7 @@ class CharactersController < ApplicationController
         format.html { redirect_to(@character) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { redirect_to(@character) }
         format.xml  { render :xml => @character.errors, :status => :unprocessable_entity }
       end
     end
