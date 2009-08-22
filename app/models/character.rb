@@ -1,5 +1,7 @@
 class Character < ActiveRecord::Base
   belongs_to :user
+  # each character is a member of a race
+  belongs_to :race
 
   has_and_belongs_to_many :char_classes
   has_and_belongs_to_many :feats
@@ -7,8 +9,14 @@ class Character < ActiveRecord::Base
   has_and_belongs_to_many :props
   has_and_belongs_to_many :skills
   
-  # each character is a member of a race, but we don't model the other direction
-  belongs_to :race
+  def attribute_bonus(val)
+    ((val - 10) / 2).floor
+  end
+  
+  def initiative_bonus
+    # TODO: implement
+    0
+  end
   
   def prop_name(abbrev)
     # TODO: implement me again!
