@@ -59,9 +59,9 @@ class CharactersController < ApplicationController
     end
   end
 
-  # GET /characters/spellcasting/1
-  # GET /characters/spellcasting/1.xml
-  def spellcasting
+  # GET /characters/spells/1
+  # GET /characters/spells/1.xml
+  def spells
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @character }

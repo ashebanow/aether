@@ -1,11 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
   map.resource  :account, :controller => "users"
   map.resource  :user_session
-  map.resources :users
 
   map.resources :password_resets
 
-  map.resources :characters
+  map.resources :characters, :except => [:edit],
+                :member => { :combat => :get,  :inventory => :get,
+                             :spells => :get,  :rites => :get,
+                             :feats => :get,   :skills => :get }
 
   map.root :controller => "characters", :action => "index"
 
