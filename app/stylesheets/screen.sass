@@ -24,14 +24,19 @@ body.three-col
     +container
 
     #header
-      +column(18)
-      margin-bottom: 20px
+      position: relative
+
+      h1
+        +replace-text("header-logo.png")
+        width: 484px
+        height: 32px
+        margin-top: 18px
 
       #header_links
-        +column(6, true)
-        +prepend(18)
-        :align right
         +horizontal-list
+        position: absolute
+        top: 0px
+        right: 0px
         a
           +hover-link
       

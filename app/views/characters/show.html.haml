@@ -1,4 +1,5 @@
-- @browser_title = h(@character.name)
+- @browser_title = "Summary: " + h(@character.name)
+%h1= h(@character.name)
 
 #character_attributes
   %h2#character_class_summary= char_class_summary @character
