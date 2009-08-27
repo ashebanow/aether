@@ -9,7 +9,7 @@ module CharactersHelper
     summary = ""
     return "(No character classes!)" if character.levels.length == 0
     for level in character.levels
-      summary += ' ' if summary.length > 0
+      summary += ', ' if summary.length > 0
       summary += (level.char_class.name + '/' + level.level.to_s)
     end
     summary

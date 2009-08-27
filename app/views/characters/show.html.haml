@@ -1,63 +1,97 @@
 - @browser_title = "Summary: " + h(@character.name)
 %h1
-  = h(@character.name)
+  = h(@character.name) + " (" + char_class_summary(@character) + ")"
 
 #character_attributes
-  %h2#character_class_summary
-    = char_class_summary(@character)
-  - if @character.race
-    %p= "Race: " + h(@character.race.name)
-  -else
-    %p Race: Unknown
-  %p= "Hair: " + h(@character.hair_color)
-  %p= "Eyes: " + h(@character.eye_color)
-  %p= "Skin: " + h(@character.skin_color)
-  %p= "Sex: " + h(@character.gender)
-  %p= "Age: " + h(@character.age)
-  %p= "Height: " + h(@character.height)
-  %p= "Weight: " + h(@character.weight)
-  %p= "Homeland: " + h(@character.homeland)
-  %p XP: 73,845
+  %h2 Info
+  %ul
+    - if @character.race
+      %li= "Race: " + h(@character.race.name)
+    -else
+      %li Race: Unknown
+    %li= "Hair: " + h(@character.hair_color)
+    %li= "Eyes: " + h(@character.eye_color)
+    %li= "Skin: " + h(@character.skin_color)
+    %li= "Sex: " + h(@character.gender)
+    %li= "Age: " + h(@character.age)
+    %li= "Height: " + h(@character.height)
+    %li= "Weight: " + h(@character.weight)
+    %li= "Homeland: " + h(@character.homeland)
+    %li XP: 73,845
 
 #abilities_summary
   %h2 Abilities
-  %p STR: 20/+5
-  %p DEX: 15/+2 (-2 Temporary Damage)
-  %p CON: 17/+3
-  %p INT: 8/-1
-  %p WIS: 14/+2
-  %p CHA: 8/-1
+  %ul
+    %li STR: 20/+5
+    %li DEX: 15/+2 (-2 Temporary Damage)
+    %li CON: 17/+3
+    %li INT: 8/-1
+    %li WIS: 14/+2
+    %li CHA: 8/-1
 
 #health_summary
   %h2 Hit Points
-  %p Max: 119
-  %p Damage: -15
-  %p Subdual: -22
-  %p Current: 92
-  %p Disabled At: 0
-  %p Dying At: -3
-  %p Dead At: -16
+  %ul
+    %li Max: 119
+    %li Damage: -15
+    %li Subdual: -22
+    %li Current: 92
+    %li Disabled At: 0
+    %li Dying At: -3
+    %li Dead At: -16
 
 #combat_summary
   %h2 Combat
-  %p Melee Attack: +20/15/10
-  %p Melee Damage: 2d6 + 12 (17-20x2)
-  %p Ranged Attack: +13/8/3 (target -1 armor bonus)
-  %p Ranged Damage: 1d8 + 5 (x3)
-  %p AC: 27 (+1 vs. swords, +2 confirming crits)
-  %p Flat Footed: 25
-  %p Touch: 15
+  %ul
+    %li Melee Attack: +20/15/10
+    %li Melee Damage: 2d6 + 12 (17-20x2)
+    %li Ranged Attack: +13/8/3 (target -1 armor bonus)
+    %li Ranged Damage: 1d8 + 5 (x3)
+    %li AC: 27 (+1 vs. swords, +2 confirming crits)
+    %li Flat Footed: 25
+    %li Touch: 15
+
+#magic_summary
+  %h2 Magic & Combat Rites
+  %ul 
+    // should really only display this when caster level is > 0
+    %li Caster Level: 0
+    %li Known Spells: 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
+    %li Spell Slots: 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
+    %li Spell Templates: Faen, Dragon
+    // end
+    %li Combat Rites: 5 / 2 / 0 / 0
 
 #movement_summary
   %h2 Movement
-  %p Speed: 20/40/80
-  %p Initiative: +2
+  %ul
+    %li Speed: 20/40/80
+    %li Initiative: +2
 
 #saves_summary
   %h2 Saving Throws
-  %p Reflex: 6
-  %p Fortitude: 11
-  %p Will: 9
+  %ul
+    %li Reflex: 6
+    %li Fortitude: 11
+    %li Will: 9
+
+#top_skills
+  %h2 Top Skills
+  %ul
+    %li Intimidate: 9
+    %li Jump: 7
+    %li Swim: 6
+    %li Climb: 5
+    %li Balance: 4
+
+#favorite_feats
+  %h2 Favorite Feats
+  %ul
+    %li Crushing Blow
+    %li Power Attack
+    %li Combat Reflexes
+    %li Rapid Strike
+
 
 %ul#actions
   %li{:class => "first"}= link_to 'Destroy', @character, :confirm => 'Are you sure?', :method => :delete
