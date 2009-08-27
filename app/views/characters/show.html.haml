@@ -1,8 +1,10 @@
 - @browser_title = "Summary: " + h(@character.name)
-%h1= h(@character.name)
+%h1
+  = h(@character.name)
 
 #character_attributes
-  %h2#character_class_summary= char_class_summary @character
+  %h2#character_class_summary
+    = char_class_summary(@character)
   - if @character.race
     %p= "Race: " + h(@character.race.name)
   -else

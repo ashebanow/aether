@@ -3,7 +3,8 @@ class Character < ActiveRecord::Base
   # each character is a member of a race
   belongs_to :race
 
-  has_and_belongs_to_many :char_classes
+  has_many :char_classes, :through => :levels, :uniq => true
+  has_many :levels
   has_and_belongs_to_many :feats
   has_and_belongs_to_many :items
   has_and_belongs_to_many :props

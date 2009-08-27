@@ -1,3 +1,3 @@
 class CharClass < ActiveRecord::Base
-  has_and_belongs_to_many :characters
+  has_many :characters, :through => :levels, :uniq => true
 end
