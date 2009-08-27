@@ -1,7 +1,7 @@
-%h1= h(@character.name)
+- @browser_title = h(@character.name)
 
 #character_attributes
-  %p#character_class_summary= char_class_summary @character
+  %h2#character_class_summary= char_class_summary @character
   - if @character.race
     %p= "Race: " + h(@character.race.name)
   -else
@@ -14,6 +14,47 @@
   %p= "Height: " + h(@character.height)
   %p= "Weight: " + h(@character.weight)
   %p= "Homeland: " + h(@character.homeland)
+  %p XP: 73,845
+
+#abilities_summary
+  %h2 Abilities
+  %p STR: 20/+5
+  %p DEX: 15/+2 (-2 Temporary Damage)
+  %p CON: 17/+3
+  %p INT: 8/-1
+  %p WIS: 14/+2
+  %p CHA: 8/-1
+
+#health_summary
+  %h2 Hit Points
+  %p Max: 119
+  %p Damage: -15
+  %p Subdual: -22
+  %p Current: 92
+  %p Disabled At: 0
+  %p Dying At: -3
+  %p Dead At: -16
+
+#combat_summary
+  %h2 Combat
+  %p Melee Attack: +20/15/10
+  %p Melee Damage: 2d6 + 12 (17-20x2)
+  %p Ranged Attack: +13/8/3 (target -1 armor bonus)
+  %p Ranged Damage: 1d8 + 5 (x3)
+  %p AC: 27 (+1 vs. swords, +2 confirming crits)
+  %p Flat Footed: 25
+  %p Touch: 15
+
+#movement_summary
+  %h2 Movement
+  %p Speed: 20/40/80
+  %p Initiative: +2
+
+#saves_summary
+  %h2 Saving Throws
+  %p Reflex: 6
+  %p Fortitude: 11
+  %p Will: 9
 
 %ul#actions
   %li{:class => "first"}= link_to 'Destroy', @character, :confirm => 'Are you sure?', :method => :delete
