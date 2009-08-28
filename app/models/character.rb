@@ -14,6 +14,10 @@ class Character < ActiveRecord::Base
     ((val - 10) / 2).floor
   end
   
+  def total_hit_points()
+    levels.find(:all).sum {|level| level.hit_points_added }
+  end
+
   def initiative_bonus
     # TODO: implement
     0

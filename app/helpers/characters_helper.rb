@@ -16,9 +16,5 @@ module CharactersHelper
     summary
   end
   
-  def total_hit_points(character)
-    character.levels.find(:all).sum {|level| level.hit_points_added }
-  end
-
 end
   

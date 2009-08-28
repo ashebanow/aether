@@ -10,7 +10,7 @@
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
 
     = stylesheet_link_tag 'compiled/styles.css'
-  %body{ :class => "bp three-col" }
+  %body{ :class => "bp one-col" }
     #container
       #header
         %h1
@@ -26,10 +26,6 @@
 
       #content
         = yield
-
-      #sidebar
-        %p
-          This is a sidebar
 
       #footer
         %p

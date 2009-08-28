@@ -19,11 +19,12 @@ form.bp
   +blueprint-form
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
-body.three-col
+body.one-col
   #container
     +container
 
     #header
+      +column(24)
       position: relative
 
       h1
@@ -35,36 +36,58 @@ body.three-col
       #header_links
         +horizontal-list
         position: absolute
-        top: 0px
+        top: 2em
         right: 0px
         a
           +hover-link
       
     #content
-      +column(20)
 
-      #character_attributes
-        font-size: 9pt
-        
-      #character_class_summary
-        font-style: italic
+      #summary_row_1
+        +column(24, true)
+
+        #character_attributes
+          +column(8)
       
+        #abilities_summary
+          +column(8)
+    
+        #combat_summary
+          // true means it's the last column in the row
+          +column(8, true)
+
+      #summary_row_2
+        +column(24, true)
+
+        #health_summary
+          +column(8)
+  
+        #magic_summary
+          +column(8)
+  
+        #movement_summary
+          +column(8, true)
+  
+      #summary_row_3
+        +column(24, true)
+
+        #saves_summary
+          +column(8)
+
+        #top_skills
+          +column(8)
+
+        #favorite_feats
+          +column(8, true)
+
       #actions
-        +horizontal-list
-        a
-          +hover-link
-
-    #sidebar
-      // true means it's the last column in the row
-      +column(4, true)
-
-      #sidebar_links
+        +column(24, true)
         +horizontal-list
         a
           +hover-link
 
     #footer
-      +column(24)
+      +column(24, true)
       margin-top: 20px
 
       #footer_links

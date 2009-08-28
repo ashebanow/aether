@@ -90,43 +90,56 @@ form.bp input.text:focus, form.bp input.title:focus, form.bp textarea:focus, for
 form.bp input.text, form.bp input.title { width: 300px; }
 form.bp textarea { width: 390px; height: 250px; }
 
-body.three-col #container { width: 950px; margin: 0 auto; overflow: hidden; display: inline-block; }
-body.three-col #container { display: block; }
-body.three-col #container #header { position: relative; }
-body.three-col #container #header h1 { text-indent: -9999em; overflow: hidden; background-image: url('/images/header-logo.png?1251399871'); background-repeat: no-repeat; background-position: 50% 50%; width: 484px; height: 32px; margin-top: 18px; }
-body.three-col #container #header #header_links { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; position: absolute; top: 0px; right: 0px; }
-body.three-col #container #header #header_links { display: block; }
-body.three-col #container #header #header_links li { list-style-type: none; margin-left: 0px; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
-body.three-col #container #header #header_links li.first { padding-left: 0px; }
-body.three-col #container #header #header_links li.last { padding-right: 0px; }
-body.three-col #container #header #header_links a { text-decoration: none; }
-body.three-col #container #header #header_links a:hover { text-decoration: underline; }
-body.three-col #container #content { display: inline; float: left; margin-right: 10px; width: 790px; }
-* html body.three-col #container #content { overflow-x: hidden; }
-body.three-col #container #content #character_attributes { font-size: 9pt; }
-body.three-col #container #content #character_class_summary { font-style: italic; }
-body.three-col #container #content #actions { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }
-body.three-col #container #content #actions { display: block; }
-body.three-col #container #content #actions li { list-style-type: none; margin-left: 0px; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
-body.three-col #container #content #actions li.first { padding-left: 0px; }
-body.three-col #container #content #actions li.last { padding-right: 0px; }
-body.three-col #container #content #actions a { text-decoration: none; }
-body.three-col #container #content #actions a:hover { text-decoration: underline; }
-body.three-col #container #sidebar { display: inline; float: left; margin-right: 0; width: 150px; }
-* html body.three-col #container #sidebar { overflow-x: hidden; }
-body.three-col #container #sidebar #sidebar_links { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }
-body.three-col #container #sidebar #sidebar_links { display: block; }
-body.three-col #container #sidebar #sidebar_links li { list-style-type: none; margin-left: 0px; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
-body.three-col #container #sidebar #sidebar_links li.first { padding-left: 0px; }
-body.three-col #container #sidebar #sidebar_links li.last { padding-right: 0px; }
-body.three-col #container #sidebar #sidebar_links a { text-decoration: none; }
-body.three-col #container #sidebar #sidebar_links a:hover { text-decoration: underline; }
-body.three-col #container #footer { display: inline; float: left; margin-right: 10px; width: 950px; margin-top: 20px; }
-* html body.three-col #container #footer { overflow-x: hidden; }
-body.three-col #container #footer #footer_links { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }
-body.three-col #container #footer #footer_links { display: block; }
-body.three-col #container #footer #footer_links li { list-style-type: none; margin-left: 0px; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
-body.three-col #container #footer #footer_links li.first { padding-left: 0px; }
-body.three-col #container #footer #footer_links li.last { padding-right: 0px; }
-body.three-col #container #footer #footer_links a { text-decoration: none; }
-body.three-col #container #footer #footer_links a:hover { text-decoration: underline; }
+body.one-col #container { width: 950px; margin: 0 auto; overflow: hidden; display: inline-block; }
+body.one-col #container { display: block; }
+body.one-col #container #header { display: inline; float: left; margin-right: 10px; width: 950px; position: relative; }
+* html body.one-col #container #header { overflow-x: hidden; }
+body.one-col #container #header h1 { text-indent: -9999em; overflow: hidden; background-image: url('/images/header-logo.png?1251407817'); background-repeat: no-repeat; background-position: 50% 50%; width: 484px; height: 32px; margin-top: 18px; }
+body.one-col #container #header #header_links { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; position: absolute; top: 2em; right: 0px; }
+body.one-col #container #header #header_links { display: block; }
+body.one-col #container #header #header_links li { list-style-type: none; margin-left: 0px; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
+body.one-col #container #header #header_links li.first { padding-left: 0px; }
+body.one-col #container #header #header_links li.last { padding-right: 0px; }
+body.one-col #container #header #header_links a { text-decoration: none; }
+body.one-col #container #header #header_links a:hover { text-decoration: underline; }
+body.one-col #container #content #summary_row_1 { display: inline; float: left; margin-right: 0; width: 950px; }
+* html body.one-col #container #content #summary_row_1 { overflow-x: hidden; }
+body.one-col #container #content #summary_row_1 #character_attributes { display: inline; float: left; margin-right: 10px; width: 310px; }
+* html body.one-col #container #content #summary_row_1 #character_attributes { overflow-x: hidden; }
+body.one-col #container #content #summary_row_1 #abilities_summary { display: inline; float: left; margin-right: 10px; width: 310px; }
+* html body.one-col #container #content #summary_row_1 #abilities_summary { overflow-x: hidden; }
+body.one-col #container #content #summary_row_1 #combat_summary { display: inline; float: left; margin-right: 0; width: 310px; }
+* html body.one-col #container #content #summary_row_1 #combat_summary { overflow-x: hidden; }
+body.one-col #container #content #summary_row_2 { display: inline; float: left; margin-right: 0; width: 950px; }
+* html body.one-col #container #content #summary_row_2 { overflow-x: hidden; }
+body.one-col #container #content #summary_row_2 #health_summary { display: inline; float: left; margin-right: 10px; width: 310px; }
+* html body.one-col #container #content #summary_row_2 #health_summary { overflow-x: hidden; }
+body.one-col #container #content #summary_row_2 #magic_summary { display: inline; float: left; margin-right: 10px; width: 310px; }
+* html body.one-col #container #content #summary_row_2 #magic_summary { overflow-x: hidden; }
+body.one-col #container #content #summary_row_2 #movement_summary { display: inline; float: left; margin-right: 0; width: 310px; }
+* html body.one-col #container #content #summary_row_2 #movement_summary { overflow-x: hidden; }
+body.one-col #container #content #summary_row_3 { display: inline; float: left; margin-right: 0; width: 950px; }
+* html body.one-col #container #content #summary_row_3 { overflow-x: hidden; }
+body.one-col #container #content #summary_row_3 #saves_summary { display: inline; float: left; margin-right: 10px; width: 310px; }
+* html body.one-col #container #content #summary_row_3 #saves_summary { overflow-x: hidden; }
+body.one-col #container #content #summary_row_3 #top_skills { display: inline; float: left; margin-right: 10px; width: 310px; }
+* html body.one-col #container #content #summary_row_3 #top_skills { overflow-x: hidden; }
+body.one-col #container #content #summary_row_3 #favorite_feats { display: inline; float: left; margin-right: 0; width: 310px; }
+* html body.one-col #container #content #summary_row_3 #favorite_feats { overflow-x: hidden; }
+body.one-col #container #content #actions { display: inline; float: left; margin-right: 0; width: 950px; margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }
+* html body.one-col #container #content #actions { overflow-x: hidden; }
+body.one-col #container #content #actions { display: block; }
+body.one-col #container #content #actions li { list-style-type: none; margin-left: 0px; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
+body.one-col #container #content #actions li.first { padding-left: 0px; }
+body.one-col #container #content #actions li.last { padding-right: 0px; }
+body.one-col #container #content #actions a { text-decoration: none; }
+body.one-col #container #content #actions a:hover { text-decoration: underline; }
+body.one-col #container #footer { display: inline; float: left; margin-right: 0; width: 950px; margin-top: 20px; }
+* html body.one-col #container #footer { overflow-x: hidden; }
+body.one-col #container #footer #footer_links { margin: 0; padding: 0; border: 0; outline: 0; overflow: hidden; display: inline-block; }
+body.one-col #container #footer #footer_links { display: block; }
+body.one-col #container #footer #footer_links li { list-style-type: none; margin-left: 0px; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
+body.one-col #container #footer #footer_links li.first { padding-left: 0px; }
+body.one-col #container #footer #footer_links li.last { padding-right: 0px; }
+body.one-col #container #footer #footer_links a { text-decoration: none; }
+body.one-col #container #footer #footer_links a:hover { text-decoration: underline; }

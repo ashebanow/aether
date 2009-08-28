@@ -2,95 +2,98 @@
 %h1
   = h(@character.name) + " (" + char_class_summary(@character) + ")"
 
-#character_attributes
-  %h2 Info
-  %ul
-    - if @character.race
-      %li= "Race: " + h(@character.race.name)
-    -else
-      %li Race: Unknown
-    %li= "Hair: " + h(@character.hair_color)
-    %li= "Eyes: " + h(@character.eye_color)
-    %li= "Skin: " + h(@character.skin_color)
-    %li= "Sex: " + h(@character.gender)
-    %li= "Age: " + h(@character.age)
-    %li= "Height: " + h(@character.height)
-    %li= "Weight: " + h(@character.weight)
-    %li= "Homeland: " + h(@character.homeland)
-    %li XP: 73,845
+#summary_row_1
+  #character_attributes
+    %h2 Info
+    %ul
+      - if @character.race
+        %li= "Race: " + h(@character.race.name)
+      -else
+        %li Race: Unknown
+      %li= "Hair: " + h(@character.hair_color)
+      %li= "Eyes: " + h(@character.eye_color)
+      %li= "Skin: " + h(@character.skin_color)
+      %li= "Sex: " + h(@character.gender)
+      %li= "Age: " + h(@character.age)
+      %li= "Height: " + h(@character.height)
+      %li= "Weight: " + h(@character.weight)
+      %li= "Homeland: " + h(@character.homeland)
+      %li XP: 73,845
 
-#abilities_summary
-  %h2 Abilities
-  %ul
-    %li STR: 20/+5
-    %li DEX: 15/+2 (-2 Temporary Damage)
-    %li CON: 17/+3
-    %li INT: 8/-1
-    %li WIS: 14/+2
-    %li CHA: 8/-1
+  #abilities_summary
+    %h2 Abilities
+    %ul
+      %li STR: 20/+5
+      %li DEX: 15/+2 (-2 Temporary Damage)
+      %li CON: 17/+3
+      %li INT: 8/-1
+      %li WIS: 14/+2
+      %li CHA: 8/-1
 
-#health_summary
-  %h2 Hit Points
-  %ul
-    %li= "Max: " + total_hit_points(@character).to_s
-    %li Damage: -15
-    %li Subdual: -22
-    %li Current: 92
-    %li Disabled At: 0
-    %li Dying At: -3
-    %li Dead At: -16
+  #combat_summary
+    %h2 Combat
+    %ul
+      %li Melee Attack: +20/15/10
+      %li Melee Damage: 2d6 + 12 (17-20x2)
+      %li Ranged Attack: +13/8/3 (target -1 armor bonus)
+      %li Ranged Damage: 1d8 + 5 (x3)
+      %li AC: 27 (+1 vs. swords, +2 confirming crits)
+      %li Flat Footed: 25
+      %li Touch: 15
 
-#combat_summary
-  %h2 Combat
-  %ul
-    %li Melee Attack: +20/15/10
-    %li Melee Damage: 2d6 + 12 (17-20x2)
-    %li Ranged Attack: +13/8/3 (target -1 armor bonus)
-    %li Ranged Damage: 1d8 + 5 (x3)
-    %li AC: 27 (+1 vs. swords, +2 confirming crits)
-    %li Flat Footed: 25
-    %li Touch: 15
+#summary_row_2
+  #health_summary
+    %h2 Hit Points
+    %ul
+      %li= "Max: " + @character.total_hit_points.to_s
+      %li Damage: -15
+      %li Subdual: -22
+      %li Current: 92
+      %li Disabled At: 0
+      %li Dying At: -3
+      %li Dead At: -16
 
-#magic_summary
-  %h2 Magic & Combat Rites
-  %ul 
-    // should really only display this when caster level is > 0
-    %li Caster Level: 0
-    %li Known Spells: 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
-    %li Spell Slots: 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
-    %li Spell Templates: Faen, Dragon
-    // end
-    %li Combat Rites: 5 / 2 / 0 / 0
+  #magic_summary
+    %h2 Magic & Combat Rites
+    %ul 
+      // should really only display this when caster level is > 0
+      %li Caster Level: 0
+      %li Known Spells: 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
+      %li Spell Slots: 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
+      %li Spell Templates: Faen, Dragon
+      // end
+      %li Combat Rites: 5 / 2 / 0 / 0
 
-#movement_summary
-  %h2 Movement
-  %ul
-    %li Speed: 20/40/80
-    %li Initiative: +2
+  #movement_summary
+    %h2 Movement
+    %ul
+      %li Speed: 20/40/80
+      %li Initiative: +2
 
-#saves_summary
-  %h2 Saving Throws
-  %ul
-    %li Reflex: 6
-    %li Fortitude: 11
-    %li Will: 9
+#summary_row_3
+  #saves_summary
+    %h2 Saving Throws
+    %ul
+      %li Reflex: 6
+      %li Fortitude: 11
+      %li Will: 9
 
-#top_skills
-  %h2 Top Skills
-  %ul
-    %li Intimidate: 9
-    %li Jump: 7
-    %li Swim: 6
-    %li Climb: 5
-    %li Balance: 4
+  #top_skills
+    %h2 Top Skills
+    %ul
+      %li Intimidate: 9
+      %li Jump: 7
+      %li Swim: 6
+      %li Climb: 5
+      %li Balance: 4
 
-#favorite_feats
-  %h2 Favorite Feats
-  %ul
-    %li Crushing Blow
-    %li Power Attack
-    %li Combat Reflexes
-    %li Rapid Strike
+  #favorite_feats
+    %h2 Favorite Feats
+    %ul
+      %li Crushing Blow
+      %li Power Attack
+      %li Combat Reflexes
+      %li Rapid Strike
 
 
 %ul#actions
