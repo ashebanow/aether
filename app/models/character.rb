@@ -3,7 +3,7 @@ class Character < ActiveRecord::Base
   # each character is a member of a race
   belongs_to :race
 
-  has_many :char_classes, :through => :levels, :uniq => true
+  has_many :char_classes, :through => :levels, :order => :position
   has_many :levels
   has_and_belongs_to_many :feats
   has_and_belongs_to_many :items
@@ -29,6 +29,37 @@ class Character < ActiveRecord::Base
 
   def prop_modifier(abbrev)
     # TODO: implement me again!
+  end
+
+  def self.create_char
+    # first find the existing pieces we need to create the character
+    user = User.find :first
+    human_race = Race.find_by_name "Human"
+    warmain = CharClass.find_by_name "Warmain"
+    ritual_warrior = CharClass.find_by_name "Ritual Warrior"
+
+    # setup basic metadata
+    ilgar = Character.new(:user        => user,
+                          :name        => "Ilgar Bladekeeper",
+                          :race        => human_race,
+                          :hair_color  => "Brown",
+                          :eye_color   => "Black",
+                          :skin_color  => "Tan",
+                          :gender      => "Male",
+                          :age         => 43,
+                          :height      => 66,
+                          :weight      => 155,
+                          :homeland    => "Lomitha")
+    ilgar.save!
+
+    # add levels
+    8.times { ilgar.levels.create(:char_class => warmain,        :hit_points_added => 10) }
+              ilgar.levels.create(:char_class => ritual_warrior, :hit_points_added => 9)
+              ilgar.levels.create(:char_class => ritual_warrior, :hit_points_added => 10)
+    2.times { ilgar.levels.create(:char_class => warmain,        :hit_points_added => 10) }
+
+    ilgar.save!
+
   end
 
 end

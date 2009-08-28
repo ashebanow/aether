@@ -8,11 +8,16 @@ module CharactersHelper
     # "Warmain/7 Unfettered/3"
     summary = ""
     return "(No character classes!)" if character.levels.length == 0
-    for level in character.levels
+    levels = character.levels.group_by(&:char_class)
+    levels.each do |char_class, level_array|
       summary += ', ' if summary.length > 0
-      summary += (level.char_class.name + '/' + level.level.to_s)
+      summary += (char_class.name + '/' + level_array.length.to_s)
     end
     summary
+  end
+  
+  def total_hit_points(character)
+    character.levels.find(:all).sum {|level| level.hit_points_added }
   end
 
 end

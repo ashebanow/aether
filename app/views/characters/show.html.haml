@@ -32,7 +32,7 @@
 #health_summary
   %h2 Hit Points
   %ul
-    %li Max: 119
+    %li= "Max: " + total_hit_points(@character).to_s
     %li Damage: -15
     %li Subdual: -22
     %li Current: 92
