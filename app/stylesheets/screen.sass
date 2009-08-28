@@ -20,6 +20,22 @@ form.bp
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.one-col
+  h1, h2
+    :margin-bottom .25em
+
+  .infoTable
+    tr
+      :line-height 1em
+      :text-align left
+
+      th
+        :font-weight bold
+        :width 20%
+
+      td.comments
+        :font-style oblique
+        :font-size 85%
+
   #container
     +container
 
@@ -46,7 +62,7 @@ body.one-col
       #summary_row_1
         +column(24, true)
 
-        #character_attributes
+        #character_info
           +column(8)
       
         #abilities_summary

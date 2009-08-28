@@ -5,41 +5,117 @@
 #summary_row_1
   #character_attributes
     %h2 Info
-    %ul
-      - if @character.race
-        %li= "Race: " + h(@character.race.name)
-      -else
-        %li Race: Unknown
-      %li= "Hair: " + h(@character.hair_color)
-      %li= "Eyes: " + h(@character.eye_color)
-      %li= "Skin: " + h(@character.skin_color)
-      %li= "Sex: " + h(@character.gender)
-      %li= "Age: " + h(@character.age)
-      %li= "Height: " + h(@character.height)
-      %li= "Weight: " + h(@character.weight)
-      %li= "Homeland: " + h(@character.homeland)
-      %li XP: 73,845
+    %table.infoTable
+      %tr
+        - if @character.race
+          %th Race:
+          %td= h(@character.race.name)
+        -else
+          %th Race:
+          %td Unknown
+      %tr
+        %th Hair:
+        %td= h(@character.hair_color)
+      %tr
+        %th Eyes:
+        %td= h(@character.eye_color)
+      %tr
+        %th Skin:
+        %td= h(@character.skin_color)
+      %tr
+        %th Sex:
+        %td= h(@character.gender)
+      %tr
+        %th Age:
+        %td= h(@character.age)
+      %tr
+        %th Height:
+        %td= h(@character.height)
+      %tr
+        %th Weight:
+        %td= h(@character.weight)
+      %tr
+        %th Homeland:
+        %td= h(@character.homeland)
+      %tr
+        %th XP:
+        %td 73,845
 
   #abilities_summary
     %h2 Abilities
-    %ul
-      %li STR: 20/+5
-      %li DEX: 15/+2 (-2 Temporary Damage)
-      %li CON: 17/+3
-      %li INT: 8/-1
-      %li WIS: 14/+2
-      %li CHA: 8/-1
+    %table.infoTable
+      %tr
+        %th
+        %th Score
+        %th Mod
+        %th Comments
+      %tr
+        %th STR:
+        %td 20
+        %td +5
+        %td.comments
+      %tr
+        %th DEX:
+        %td 15
+        %td +2
+        %td.comments -2 Temporary Damage
+      %tr
+        %th CON:
+        %td 17
+        %td +3
+        %td.comments
+      %tr
+        %th INT:
+        %td 8
+        %td -1
+        %td.comments
+      %tr
+        %th WIS:
+        %td 14
+        %td +2
+        %td.comments
+      %tr
+        %th CHA:
+        %td 8
+        %td -1
+        %td.comments
 
   #combat_summary
     %h2 Combat
-    %ul
-      %li Melee Attack: +20/15/10
-      %li Melee Damage: 2d6 + 12 (17-20x2)
-      %li Ranged Attack: +13/8/3 (target -1 armor bonus)
-      %li Ranged Damage: 1d8 + 5 (x3)
-      %li AC: 27 (+1 vs. swords, +2 confirming crits)
-      %li Flat Footed: 25
-      %li Touch: 15
+    %table.infoTable
+      %tr
+        %th Attack
+        %th Bonus
+        %th Damage
+        %th Critical Hit
+        %th Comments
+      %tr
+        %th Melee:
+        %td 20/15/10
+        %td 2d6 + 12
+        %td 17-20x2
+        %td.comments
+      %tr
+        %th Ranged:
+        %td +13/8/3 (target -1 armor bonus)
+        %td 1d8 + 5
+        %td x3
+        %td.comments target -1 armor bonus
+
+    %table.infoTable
+      %tr
+        %th Armor Class
+        %th Base
+        %th Flat Footed
+        %th Touch
+      %tr
+        %th Bonus:
+        %td 27 
+        %td 25
+        %td 15
+      %tr
+        %th Comments:
+        %td.comments{:colspan => 3} +1 vs. swords, +2 confirming crits
 
 #summary_row_2
   #health_summary
