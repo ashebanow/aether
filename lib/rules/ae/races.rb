@@ -18,7 +18,7 @@ race :human, :ae_race do
   
   # humans get 1 extra non-talent feat at level 1
   racial_abilities = [
-    [ 1, :choose_feat :nontalent ]
+    [ 1, :choose_feat, :nontalent ],
     [ 1, :choose_language]
   ]
 
@@ -39,8 +39,8 @@ race :human, :ae_race do
 
   racial_levels = [
     # [evolved?, [ [special ability, args...], ...]  ]
-    [ true, [ [:choose_ability_score], [:choose_feat :nontalent], [:choose_class_skills 6] ] ],
-    [ true, [ [:choose_ability_score], [:choose_feat :nontalent], [:choose_class_skills 6] ] ],
-    [ true, [ [:choose_ability_score], [:choose_feat :nontalent], [:choose_class_skills 6] ] ]
+    [ true, [ [:choose_ability_score], [:choose_feat, :nontalent], [:choose_class_skills, 6] ] ],
+    [ true, [ [:choose_ability_score], [:choose_feat, :nontalent], [:choose_class_skills, 6] ] ],
+    [ true, [ [:choose_ability_score], [:choose_feat, :nontalent], [:choose_class_skills, 6] ] ]
   ]
 end
