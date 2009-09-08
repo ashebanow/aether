@@ -6,7 +6,7 @@ class CharactersController < ApplicationController
   # GET /characters
   # GET /characters.xml
   def index
-    @characters = Character.find_all_by_user_id @user
+    @characters = @user.characters.find :all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -71,8 +71,7 @@ class CharactersController < ApplicationController
   # GET /characters/new
   # GET /characters/new.xml
   def new
-    @character = Character.new
-    @character.user_id = @user
+    @character = @user.build_character
 
     respond_to do |format|
       format.html # new.html.erb
@@ -83,8 +82,7 @@ class CharactersController < ApplicationController
   # POST /characters
   # POST /characters.xml
   def create
-    @character = Character.new(params[:character])
-    @character.user = @user
+    @character = @user.build_character(params[:character])
 
     respond_to do |format|
       if @character.save
@@ -131,8 +129,7 @@ private
   end
   
   def find_character_by_id
-    @character = Character.find(params[:id])
-    # FIXME: make sure this user owns the character
+    @character = @user.characters.find(params[:id])
   end
 
 end
