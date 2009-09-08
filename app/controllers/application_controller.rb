@@ -3,7 +3,9 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
+  
   helper_method :current_user_session, :current_user
+
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
   protect_from_forgery # See ActionController::RequestForgeryProtection for details

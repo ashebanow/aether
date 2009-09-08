@@ -3,6 +3,15 @@ class CharactersController < ApplicationController
   before_filter :find_user
   before_filter :find_character_by_id, :except => [:index, :new, :create]
 
+  in_place_edit_for :character, :hair_color
+  in_place_edit_for :character, :eye_color
+  in_place_edit_for :character, :skin_color
+  in_place_edit_for :character, :gender
+  in_place_edit_for :character, :age
+  in_place_edit_for :character, :height
+  in_place_edit_for :character, :weight
+  in_place_edit_for :character, :homeland
+
   # GET /characters
   # GET /characters.xml
   def index
