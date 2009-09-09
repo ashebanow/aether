@@ -5,34 +5,9 @@
       %th
       %th Score
       %th Mod
-      %th Comments
-    %tr
-      %th STR:
-      %td.numeric 20
-      %td.numeric +5
-      %td.comments
-    %tr
-      %th DEX:
-      %td.numeric 15
-      %td.numeric +2
-      %td.comments -2 Temporary Damage
-    %tr
-      %th CON:
-      %td.numeric 17
-      %td.numeric +3
-      %td.comments
-    %tr
-      %th INT:
-      %td.numeric 8
-      %td.numeric -1
-      %td.comments
-    %tr
-      %th WIS:
-      %td.numeric 14
-      %td.numeric +2
-      %td.comments
-    %tr
-      %th CHA:
-      %td.numeric 8
-      %td.numeric -1
-      %td.comments
+
+    - %w{STR DEX CON INT WIS CHA}.each do |abbrev|
+      %tr
+        %th= abbrev
+        %td.numeric= character.prop_value abbrev
+        %td.numeric= character.prop_modifier abbrev

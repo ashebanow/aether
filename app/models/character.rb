@@ -24,17 +24,17 @@ class Character < ActiveRecord::Base
   end
   
   def prop_name(abbrev)
-    props.find_by_abbreviation abbrev
+    prop = props.find_by_abbreviation abbrev
     prop.name
   end
 
   def prop_value(abbrev)
-    props.find_by_abbreviation abbrev
+    prop = props.find_by_abbreviation abbrev
     prop.value
   end
 
   def prop_modifier(abbrev)
-    props.find_by_abbreviation abbrev
+    prop = props.find_by_abbreviation abbrev
     (prop.value - 10) / 2
   end
 
