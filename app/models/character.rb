@@ -43,18 +43,17 @@ class Character < ActiveRecord::Base
     ritual_warrior = CharClass.find_by_name "Ritual Warrior"
 
     # setup basic metadata
-    ilgar = Character.new(:user        => user,
-                          :name        => "Ilgar Bladekeeper",
-                          :race        => human_race,
-                          :hair_color  => "Brown",
-                          :eye_color   => "Black",
-                          :skin_color  => "Tan",
-                          :gender      => "Male",
-                          :age         => 43,
-                          :height      => 66,
-                          :weight      => 155,
-                          :homeland    => "Lomitha")
-    ilgar.save!
+    ilgar = user.characters.create(:name        => "Ilgar Bladekeeper",
+                                   :race        => human_race,
+                                   :hair_color  => "Brown",
+                                   :eye_color   => "Black",
+                                   :skin_color  => "Tan",
+                                   :gender      => "Male",
+                                   :age         => 43,
+                                   :height      => 66,
+                                   :weight      => 155,
+                                   :homeland    => "Lomitha",
+                                   :xp          => 72345)
 
     # add levels
     8.times { ilgar.levels.create(:char_class => warmain,        :hit_points_added => 10) }

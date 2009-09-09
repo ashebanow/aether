@@ -1,46 +1,9 @@
 - @browser_title = "Summary: " + h(@character.name)
-%h1
-  = h(@character.name) + " (" + char_class_summary(@character) + ")"
 
 #summary_row_1
-  #character_attributes
-    %h2 Info
-    %table.infoTable
-      %tr
-        - if @character.race
-          %th Race:
-          %td= h(@character.race.name)
-        -else
-          %th Race:
-          %td Unknown
-      %tr
-        %th Hair:
-        %td= in_place_editor_field :character, :hair_color
-      %tr
-        %th Eyes:
-        %td= in_place_editor_field :character, :eye_color
-      %tr
-        %th Skin:
-        %td= in_place_editor_field :character, :skin_color
-      %tr
-        %th Sex:
-        %td= in_place_editor_field :character, :gender
-      %tr
-        %th Age:
-        %td= in_place_editor_field :character, :age
-      %tr
-        %th Height:
-        %td= in_place_editor_field :character, :height
-      %tr
-        %th Weight:
-        %td= in_place_editor_field :character, :weight
-      %tr
-        %th Homeland:
-        %td= in_place_editor_field :character, :homeland
-      %tr
-        %th XP:
-        %td= in_place_editor_field :character, :xp
+  = render :partial => "character_attributes", :locals => { :character => @character }
 
+#summary_row_2
   #abilities_summary
     %h2 Abilities
     %table.infoTable
@@ -80,44 +43,6 @@
         %td -1
         %td.comments
 
-  #combat_summary
-    %h2 Combat
-    %table.infoTable
-      %tr
-        %th Attack
-        %th Bonus
-        %th Damage
-        %th Critical Hit
-        %th Comments
-      %tr
-        %th Melee:
-        %td 20/15/10
-        %td 2d6 + 12
-        %td 17-20x2
-        %td.comments
-      %tr
-        %th Ranged:
-        %td +13/8/3 (target -1 armor bonus)
-        %td 1d8 + 5
-        %td x3
-        %td.comments target -1 armor bonus
-
-    %table.infoTable
-      %tr
-        %th Armor Class
-        %th Base
-        %th Flat Footed
-        %th Touch
-      %tr
-        %th Bonus:
-        %td 27 
-        %td 25
-        %td 15
-      %tr
-        %th Comments:
-        %td.comments{:colspan => 3} +1 vs. swords, +2 confirming crits
-
-#summary_row_2
   #health_summary
     %h2 Hit Points
     %ul
@@ -129,8 +54,26 @@
       %li Dying At: -3
       %li Dead At: -16
 
+  #movement_summary
+    %h2 Movement
+    %ul
+      %li Speed: 20/40/80
+      %li Initiative: +2
+      %li Encumbrance: Medium
+
+  #saves_summary
+    %h2 Saving Throws
+    %ul
+      %li Reflex: 6
+      %li Fortitude: 11
+      %li Will: 9
+
+#summary_row_3
+
+  = render :partial => "combat", :locals => { :character => @character }
+
   #magic_summary
-    %h2 Magic & Combat Rites
+    %h2= link_to "Magic & Rites", :action => :spells
     %ul 
       // should really only display this when caster level is > 0
       %li Caster Level: 0
@@ -140,22 +83,16 @@
       // end
       %li Combat Rites: 5 / 2 / 0 / 0
 
-  #movement_summary
-    %h2 Movement
-    %ul
-      %li Speed: 20/40/80
-      %li Initiative: +2
+#summary_row_4
 
-#summary_row_3
-  #saves_summary
-    %h2 Saving Throws
+  #top_items
+    %h2= link_to "Favorite Items", :action => :inventory
     %ul
-      %li Reflex: 6
-      %li Fortitude: 11
-      %li Will: 9
+      %li Nethersword
+      %li Bearhelm
 
   #top_skills
-    %h2 Top Skills
+    %h2= link_to "Favorite Skills", :action => :skills
     %ul
       %li Intimidate: 9
       %li Jump: 7
@@ -163,14 +100,13 @@
       %li Climb: 5
       %li Balance: 4
 
-  #favorite_feats
-    %h2 Favorite Feats
+  #top_feats
+    %h2= link_to "Favorite Feats", :action => :feats
     %ul
       %li Crushing Blow
       %li Power Attack
       %li Combat Reflexes
       %li Rapid Strike
-
 
 %ul#actions
   %li{:class => "first"}= link_to 'Destroy', @character, :confirm => 'Are you sure?', :method => :delete

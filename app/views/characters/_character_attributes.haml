@@ -1,0 +1,44 @@
+%h1
+  - title = h(@character.name) + " (" + char_class_summary(@character) + ")"
+  = link_to title, :action => :show
+#character_attributes_1
+  %table.infoTable
+    %tr
+      %th Race:
+      - if character.race
+        %td= h character.race.name
+      - else
+        %td Unknown
+      %tr
+        %th Sex:
+        %td= in_place_editor_field :character, :gender
+      %tr
+        %th Age:
+        %td= in_place_editor_field :character, :age
+#character_attributes_2
+  %table.infoTable
+    %tr
+      %th Hair:
+      %td= in_place_editor_field :character, :hair_color
+    %tr
+      %th Eyes:
+      %td= in_place_editor_field :character, :eye_color
+    %tr
+      %th Skin:
+      %td= in_place_editor_field :character, :skin_color
+#character_attributes_3
+  %table.infoTable
+    %tr
+      %th Height:
+      %td= in_place_editor_field :character, :height
+    %tr
+      %th Weight:
+      %td= in_place_editor_field :character, :weight
+#character_attributes_4
+  %table.infoTable
+    %tr
+      %th XP:
+      %td= in_place_editor_field :character, :xp
+    %tr
+      %th Homeland:
+      %td= in_place_editor_field :character, :homeland

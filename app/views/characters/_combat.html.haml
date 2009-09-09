@@ -1,0 +1,39 @@
+#combat_summary
+  %h2= link_to "Combat", :action => :combat
+  %table.infoTable
+    %tr
+      %th Attack
+      %th Bonus
+      %th Damage
+      %th Critical Hit
+      %th Comments
+    %tr
+      %th Melee:
+      %td +20/+15/+10
+      %td 2d6 + 12
+      %td 17-20x2
+      %td.comments
+    %tr
+      %th Ranged:
+      %td +13/+8/+3
+      %td 1d8 + 5
+      %td x3
+      %td.comments target -1 armor bonus
+
+  %table.infoTable
+    %tr
+      %th Armor Class
+      %th Base
+      %th Flat Footed
+      %th Touch
+    %tr
+      %th Bonus:
+      %td 27 
+      %td 25
+      %td 15
+      %tr
+        %th Check Penalty:
+        %td{:colspan => 3} -2
+      %tr
+        %th Comments:
+        %td.comments{:colspan => 3} +1 vs. swords, +2 confirming crits

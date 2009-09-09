@@ -19,11 +19,12 @@ form.bp
   +blueprint-form
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
-body.one-col
+body.no-sidebar
   h1, h2
     :margin-bottom .25em
 
   .infoTable
+    :width 100%
     tr
       :line-height 1em
       :text-align left
@@ -35,6 +36,7 @@ body.one-col
       td.comments
         :font-style oblique
         :font-size 85%
+        :width 50%
 
   #container
     +container
@@ -62,39 +64,50 @@ body.one-col
       #summary_row_1
         +column(24, true)
 
-        #character_info
-          +column(8)
+        #character_attributes_1
+          +column(6)
+        #character_attributes_2
+          +column(6)
+        #character_attributes_3
+          +column(6)
+        #character_attributes_4
+          +column(6, true)
       
-        #abilities_summary
-          +column(8)
-    
-        #combat_summary
-          // true means it's the last column in the row
-          +column(8, true)
-
       #summary_row_2
         +column(24, true)
 
+        #abilities_summary
+          +column(6)
+    
         #health_summary
-          +column(8)
-  
-        #magic_summary
-          +column(8)
-  
+          +column(6)
+
         #movement_summary
-          +column(8, true)
-  
-      #summary_row_3
-        +column(24, true)
+          +column(6)
 
         #saves_summary
-          +column(8)
+          +column(6, true)
+
+      #summary_row_3
+        +column(24, true)
+        
+        #combat_summary
+          +column(12)
+
+        #magic_summary
+          +column(12, true)
+
+      #summary_row_4
+        +column(24, true)
+
+        #top_items
+          +column(12)
 
         #top_skills
-          +column(8)
+          +column(6)
 
-        #favorite_feats
-          +column(8, true)
+        #top_feats
+          +column(6, true)
 
       #actions
         +column(24, true)
