@@ -86,26 +86,44 @@
 
   #top_items
     %h2= link_to "Favorite Items", :action => :inventory
-    %ul
-      %li Nethersword
-      %li Bearhelm
+    %table.infoTable
+      %tr
+        %th{ :width => "30%" } Nethersword
+        %td.comments +2 Greatsword, Conscious
+      %tr
+        %th Bearhelm
+        %td.comments Helm, +1 AC, Conscious
 
   #top_skills
     %h2= link_to "Favorite Skills", :action => :skills
-    %ul
-      %li Intimidate: 9
-      %li Jump: 7
-      %li Swim: 6
-      %li Climb: 5
-      %li Balance: 4
+    %table.infoTable
+      %tr
+        %th Intimidate:
+        %td 9
+      %tr
+        %th Jump:
+        %td 7
+      %tr
+        %th Swim:
+        %td 6
+      %tr
+        %th Climb:
+        %td 5
+      %tr
+        %th Balance:
+        %td 4
 
   #top_feats
     %h2= link_to "Favorite Feats", :action => :feats
-    %ul
-      %li Crushing Blow
-      %li Power Attack
-      %li Combat Reflexes
-      %li Rapid Strike
+    %table.infoTable
+      %tr
+        %th Crushing Blow
+      %tr
+        %th Power Attack
+      %tr
+        %th Combat Reflexes
+      %tr
+        %th Rapid Strike
 
 %ul#actions
   %li{:class => "first"}= link_to 'Destroy', @character, :confirm => 'Are you sure?', :method => :delete
