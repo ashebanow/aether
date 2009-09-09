@@ -4,69 +4,58 @@
   = render :partial => "character_attributes", :locals => { :character => @character }
 
 #summary_row_2
-  #abilities_summary
-    %h2 Abilities
-    %table.infoTable
-      %tr
-        %th
-        %th Score
-        %th Mod
-        %th Comments
-      %tr
-        %th STR:
-        %td 20
-        %td +5
-        %td.comments
-      %tr
-        %th DEX:
-        %td 15
-        %td +2
-        %td.comments -2 Temporary Damage
-      %tr
-        %th CON:
-        %td 17
-        %td +3
-        %td.comments
-      %tr
-        %th INT:
-        %td 8
-        %td -1
-        %td.comments
-      %tr
-        %th WIS:
-        %td 14
-        %td +2
-        %td.comments
-      %tr
-        %th CHA:
-        %td 8
-        %td -1
-        %td.comments
+  = render :partial => "abilities", :locals => { :character => @character }
 
   #health_summary
     %h2 Hit Points
-    %ul
-      %li= "Max: " + @character.total_hit_points.to_s
-      %li Damage: -15
-      %li Subdual: -22
-      %li Current: 92
-      %li Disabled At: 0
-      %li Dying At: -3
-      %li Dead At: -16
+    %table.infoTable
+      %tr
+        %th Max:
+        %td= @character.total_hit_points.to_s
+      %tr
+        %th Damage:
+        %td -15
+      %tr
+        %th Subdual:
+        %td -15
+      %tr
+        %th Current:
+        %td.total 92
+      %tr
+        %th Disabled At:
+        %td 0
+      %tr
+        %th Dying At:
+        %td -3
+      %tr
+        %th Dead At:
+        %td -16
 
   #movement_summary
     %h2 Movement
-    %ul
-      %li Speed: 20/40/80
-      %li Initiative: +2
-      %li Encumbrance: Medium
+    %table.infoTable
+      %tr
+        %th Speed:
+        %td 20/40/80
+      %tr
+        %th Initiative:
+        %td +2
+      %tr
+        %th Encumbrance:
+        %td Medium
 
   #saves_summary
     %h2 Saving Throws
-    %ul
-      %li Reflex: 6
-      %li Fortitude: 11
-      %li Will: 9
+    %table.infoTable
+      %tr
+        %th Reflex:
+        %td 6
+      %tr
+        %th Fortitude:
+        %td 11
+      %tr
+        %th Will:
+        %td 9
 
 #summary_row_3
 
@@ -74,14 +63,24 @@
 
   #magic_summary
     %h2= link_to "Magic & Rites", :action => :spells
-    %ul 
+    %table.infoTable
       // should really only display this when caster level is > 0
-      %li Caster Level: 0
-      %li Known Spells: 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
-      %li Spell Slots: 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
-      %li Spell Templates: Faen, Dragon
+      %tr
+        %th Caster Level:
+        %td 0
+      %tr
+        %th Known Spells:
+        %td 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
+      %tr
+        %th Spell Slots:
+        %td 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
+      %tr
+        %th Spell Templates:
+        %td Faen, Dragon
       // end
-      %li Combat Rites: 5 / 2 / 0 / 0
+      %tr
+        %th Combat Rites:
+        %td 5 / 2 / 0 / 0
 
 #summary_row_4
 

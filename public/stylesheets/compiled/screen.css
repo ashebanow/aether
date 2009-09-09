@@ -93,7 +93,8 @@ form.bp textarea { width: 390px; height: 250px; }
 body.no-sidebar h1, body.no-sidebar h2 { margin-bottom: .25em; }
 body.no-sidebar .infoTable { width: 100%; }
 body.no-sidebar .infoTable tr { line-height: 1em; text-align: left; }
-body.no-sidebar .infoTable tr th { font-weight: bold; width: 20%; }
+body.no-sidebar .infoTable tr th { font-weight: bold; }
+body.no-sidebar .infoTable tr td.total { font-weight: bold; font-size: 110%; }
 body.no-sidebar .infoTable tr td.comments { font-style: oblique; font-size: 85%; width: 50%; }
 body.no-sidebar #container { width: 950px; margin: 0 auto; overflow: hidden; display: inline-block; }
 body.no-sidebar #container { display: block; }
