@@ -105,21 +105,6 @@ class CharactersController < ApplicationController
     end
   end
 
-  # PUT /characters/1
-  # PUT /characters/1.xml
-  def update
-    respond_to do |format|
-      if @character.update_attributes(params[:character])
-        flash[:notice] = 'Character was successfully updated.'
-        format.html { redirect_to(@character) }
-        format.xml  { head :ok }
-      else
-        format.html { redirect_to(@character) }
-        format.xml  { render :xml => @character.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /characters/1
   # DELETE /characters/1.xml
   def destroy
