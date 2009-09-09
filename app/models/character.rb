@@ -7,7 +7,7 @@ class Character < ActiveRecord::Base
   has_many :char_classes, :through => :levels, :order => :position
   has_and_belongs_to_many :feats
   has_and_belongs_to_many :items
-  has_and_belongs_to_many :props
+  has_many :props, :as => :owner
   has_and_belongs_to_many :skills
   
   def attribute_bonus(val)
@@ -24,15 +24,18 @@ class Character < ActiveRecord::Base
   end
   
   def prop_name(abbrev)
-    # TODO: implement me again!
+    props.find_by_abbreviation abbrev
+    prop.name
   end
 
   def prop_value(abbrev)
-    # TODO: implement me again!
+    props.find_by_abbreviation abbrev
+    prop.value
   end
 
   def prop_modifier(abbrev)
-    # TODO: implement me again!
+    props.find_by_abbreviation abbrev
+    (prop.value - 10) / 2
   end
 
   def self.create_char
@@ -61,6 +64,15 @@ class Character < ActiveRecord::Base
               ilgar.levels.create(:char_class => ritual_warrior, :hit_points_added => 10)
     2.times { ilgar.levels.create(:char_class => warmain,        :hit_points_added => 10) }
 
+    ilgar.save!
+    
+    # add attributes
+    ilgar.props << IntegerProp.new(:int_value => 20, :name => 'Strength',     :abbreviation => 'STR')
+    ilgar.props << IntegerProp.new(:int_value => 15, :name => 'Dexterity',    :abbreviation => 'DEX')
+    ilgar.props << IntegerProp.new(:int_value => 17, :name => 'Constitution', :abbreviation => 'CON')
+    ilgar.props << IntegerProp.new(:int_value => 8,  :name => 'Intelligence', :abbreviation => 'INT')
+    ilgar.props << IntegerProp.new(:int_value => 14, :name => 'Wisdom',       :abbreviation => 'WIS')
+    ilgar.props << IntegerProp.new(:int_value => 8,  :name => 'Charisma',     :abbreviation => 'CHA')
     ilgar.save!
 
   end

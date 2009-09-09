@@ -1,3 +1,30 @@
 class Prop < ActiveRecord::Base
-  has_and_belongs_to_many :characters
+  belongs_to :owner, :polymorphic => true
+end
+
+class IntegerProp < Prop
+  def value
+    int_value
+  end
+  def value=(new_value)
+    int_value = new_value
+  end
+end
+
+class FloatProp < Prop
+  def value
+    float_value
+  end
+  def value=(new_value)
+    float_value = new_value
+  end
+end
+
+class StringProp < Prop
+  def value
+    string_value
+  end
+  def value=(new_value)
+    string_value = new_value
+  end
 end
