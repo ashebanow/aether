@@ -11,51 +11,63 @@
     %table.infoTable
       %tr
         %th Max:
-        %td= @character.total_hit_points.to_s
+        %td.numeric= @character.total_hit_points.to_s
       %tr
         %th Damage:
-        %td -15
+        %td.numeric -15
       %tr
         %th Subdual:
-        %td -15
+        %td.numeric -15
       %tr
         %th Current:
         %td.total 92
       %tr
         %th Disabled At:
-        %td 0
+        %td.numeric 0
       %tr
         %th Dying At:
-        %td -3
+        %td.numeric -3
       %tr
         %th Dead At:
-        %td -16
+        %td.numeric -16
 
   #movement_summary
     %h2 Movement
     %table.infoTable
       %tr
-        %th Speed:
-        %td 20/40/80
-      %tr
         %th Initiative:
-        %td +2
+        %td.numeric +2
+      %tr
+        %th Walk:
+        %td.numeric 20
+      %tr
+        %th Hustle:
+        %td.numeric 40
+      %tr
+        %th Run:
+        %td.numeric 80
+      %tr
+        %th Fly:
+        %td.numeric 60
+      %tr
+        %th Manueverability:
+        %td.numeric Average
       %tr
         %th Encumbrance:
-        %td Medium
+        %td.numeric Medium
 
   #saves_summary
     %h2 Saving Throws
     %table.infoTable
       %tr
         %th Reflex:
-        %td 6
+        %td.numeric 6
       %tr
         %th Fortitude:
-        %td 11
+        %td.numeric 11
       %tr
         %th Will:
-        %td 9
+        %td.numeric 9
 
 #summary_row_3
 
@@ -70,17 +82,17 @@
         %td 0
       %tr
         %th Known Spells:
-        %td 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
+        %td.nowrap 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
       %tr
         %th Spell Slots:
-        %td 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
+        %td.nowrap 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0 / 0
       %tr
         %th Spell Templates:
         %td Faen, Dragon
       // end
       %tr
         %th Combat Rites:
-        %td 5 / 2 / 0 / 0
+        %td.nowrap 5 / 2 / 0 / 0
 
 #summary_row_4
 
@@ -99,19 +111,19 @@
     %table.infoTable
       %tr
         %th Intimidate:
-        %td 9
+        %td.numeric 9
       %tr
         %th Jump:
-        %td 7
+        %td.numeric 7
       %tr
         %th Swim:
-        %td 6
+        %td.numeric 6
       %tr
         %th Climb:
-        %td 5
+        %td.numeric 5
       %tr
         %th Balance:
-        %td 4
+        %td.numeric 4
 
   #top_feats
     %h2= link_to "Favorite Feats", :action => :feats

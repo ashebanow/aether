@@ -21,25 +21,32 @@ form.bp
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.no-sidebar
   h1, h2
-    :margin-bottom .25em
+    margin-bottom: .25em
 
   .infoTable
-    :width 100%
+    width: 100%
     tr
-      :line-height 1em
-      :text-align left
+      line-height: 1em
+      text-align: left
 
       th
-        :font-weight bold
+        font-weight: bold
+
+      td.nobreak
+        white-space: nowrap
+
+      td.numeric
+        text-align: right
 
       td.total
-        :font-weight bold
-        :font-size 110%
+        font-weight: bold
+        text-align: right
+        font-size: 110%
 
       td.comments
-        :font-style oblique
-        :font-size 85%
-        :width 50%
+        font-style: oblique
+        font-size: 85%
+        width: 50%
 
   #container
     +container
