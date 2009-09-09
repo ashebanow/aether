@@ -11,6 +11,7 @@ class CharactersController < ApplicationController
   in_place_edit_for :character, :height
   in_place_edit_for :character, :weight
   in_place_edit_for :character, :homeland
+  in_place_edit_for :character, :xp
 
   # GET /characters
   # GET /characters.xml
