@@ -7,36 +7,39 @@
   = render :partial => "abilities", :locals => { :character => @character }
 
   #health_summary
-    %h2 Hit Points
+    %h2 Health
     %table.infoTable
       %tr
-        %th Max:
-        %td.numeric= as_bonus(@character.total_hit_points)
+        %th Max HP:
+        %td.numeric= @character.max_hit_points
       %tr
         %th Damage:
-        %td.numeric -15
+        %td.numeric= @character.prop_value 'Dmg'
       %tr
         %th Subdual:
-        %td.numeric -15
+        %td.numeric= @character.prop_value 'SubDmg'
       %tr
-        %th Current:
-        %td.total 92
+        %th Temporary HP:
+        %td.numeric= @character.prop_value 'TmpHP'
+      %tr
+        %th Current HP:
+        %td.total= @character.current_hit_points
       %tr
         %th Disabled At:
-        %td.numeric 0
+        %td.numeric= @character.disabled_at
       %tr
         %th Dying At:
-        %td.numeric -3
+        %td.numeric= @character.dying_at
       %tr
         %th Dead At:
-        %td.numeric -16
+        %td.numeric= @character.dead_at
 
   #movement_summary
     %h2 Movement
     %table.infoTable
       %tr
         %th Initiative:
-        %td.numeric +2
+        %td.numeric= as_bonus(@character.initiative_modifier)
       %tr
         %th Walk:
         %td.numeric 20

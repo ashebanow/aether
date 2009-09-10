@@ -14,13 +14,29 @@ class Character < ActiveRecord::Base
     ((val - 10) / 2).floor
   end
   
-  def total_hit_points()
+  def max_hit_points()
     levels.find(:all).sum {|level| level.hit_points_added }
   end
 
-  def initiative_bonus
-    # TODO: implement
+  def current_hit_points()
+    max_hit_points - prop_value('Dmg') - prop_value('SubDmg') + prop_value('TmpHP')
+  end
+  
+  def disabled_at
     0
+  end
+  
+  def dying_at
+    - prop_modifier('CON')
+  end
+  
+  def dead_at
+    - prop_value('CON')
+  end
+
+  def initiative_modifier
+    # TODO: add in other bonuses from feats, etc.
+    prop_modifier('DEX')
   end
   
   def prop_name(abbrev)
@@ -67,12 +83,23 @@ class Character < ActiveRecord::Base
     ilgar.save!
     
     # add attributes
-    ilgar.props << IntegerProp.new(:int_value => 20, :name => 'Strength',     :abbreviation => 'STR')
-    ilgar.props << IntegerProp.new(:int_value => 15, :name => 'Dexterity',    :abbreviation => 'DEX')
-    ilgar.props << IntegerProp.new(:int_value => 17, :name => 'Constitution', :abbreviation => 'CON')
-    ilgar.props << IntegerProp.new(:int_value => 8,  :name => 'Intelligence', :abbreviation => 'INT')
-    ilgar.props << IntegerProp.new(:int_value => 14, :name => 'Wisdom',       :abbreviation => 'WIS')
-    ilgar.props << IntegerProp.new(:int_value => 8,  :name => 'Charisma',     :abbreviation => 'CHA')
+    ilgar.props << IntProp.new(:int_value => 20,  :name => 'Strength',      :abbreviation => 'STR')
+    ilgar.props << IntProp.new(:int_value => 15,  :name => 'Dexterity',     :abbreviation => 'DEX')
+    ilgar.props << IntProp.new(:int_value => 17,  :name => 'Constitution',  :abbreviation => 'CON')
+    ilgar.props << IntProp.new(:int_value => 8,   :name => 'Intelligence',  :abbreviation => 'INT')
+    ilgar.props << IntProp.new(:int_value => 14,  :name => 'Wisdom',        :abbreviation => 'WIS')
+    ilgar.props << IntProp.new(:int_value => 8,   :name => 'Charisma',      :abbreviation => 'CHA')
+
+    ilgar.props << IntProp.new(:int_value => 0,   :name => 'Ability Points Remaining',  :abbreviation => 'AbilPtsRem')
+    ilgar.props << IntProp.new(:int_value => 24,  :name => 'Ability Points Max',        :abbreviation => 'AbilPtsMax')
+
+    ilgar.props << IntProp.new(:int_value => 15,  :name => 'Damage',                :abbreviation => 'Dmg')
+    ilgar.props << IntProp.new(:int_value => 10,  :name => 'Subdual Damage',        :abbreviation => 'SubDmg')
+    ilgar.props << IntProp.new(:int_value => 0,   :name => 'Temporary HP',          :abbreviation => 'TmpHP')
+    ilgar.props << IntProp.new(:int_value => 0,   :name => 'Disabled At Modifier',  :abbreviation => 'DisAtMod')
+    ilgar.props << IntProp.new(:int_value => 0,   :name => 'Dying At Modifier',     :abbreviation => 'DyingAtMod')
+    ilgar.props << IntProp.new(:int_value => 0,   :name => 'Dead At Modifier',      :abbreviation => 'DeadAtMod')
+
     ilgar.save!
 
   end

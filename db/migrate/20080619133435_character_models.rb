@@ -130,7 +130,7 @@ class CharacterModels < ActiveRecord::Migration
     create_table "props", :force => true do |t|
       t.column "name",         :string, :limit => 63, :default => "", :null => false
       t.column "abbreviation", :string, :limit => 15, :default => "", :null => false
-      t.column "prop_type",    :string, :limit => 2
+      t.column "prop_type",    :string
     end
 
     add_index "props", ["name"], :name => "ix_props_name", :unique => true
