@@ -1,6 +1,10 @@
 module CharactersHelper
-  def format_modifier(abbrev)
-    # TODO: implement me again!
+  def as_bonus(value)
+    if value > 0
+      "+" + value.to_s
+    else
+      value.to_s
+    end
   end
   
   def char_class_summary(character)

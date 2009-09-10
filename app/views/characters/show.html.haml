@@ -11,7 +11,7 @@
     %table.infoTable
       %tr
         %th Max:
-        %td.numeric= @character.total_hit_points.to_s
+        %td.numeric= as_bonus(@character.total_hit_points)
       %tr
         %th Damage:
         %td.numeric -15
