@@ -1,28 +1,6 @@
-class Feat < ActiveRecord::Base; end
-class GeneralFeat < Feat; end
-class ItemCreationFeat < Feat; end
-class CeremonialFeat < Feat; end
-class TalentFeat < Feat; end
-
-class AddD20Data < ActiveRecord::Migration
-  def self.up
-    create_char_classes
-    create_feat
-    create_prop
-    create_races
-    create_skill
-  end
-
-  def self.down
-    # no point in deleting data, dropping tables will do the trick
-    CharClass.delete_all
-    Feat.delete_all
-    Race.delete_all
-    Skill.delete_all
-    Prop.delete_all
-  end
-
+class AESeeder
   def self.create_char_classes
+    CharClass.delete_all
     CharClass.create(:name => 'Akashic',        :hit_die => '1d6')
     CharClass.create(:name => 'Champion',       :hit_die => '1d10')
     CharClass.create(:name => 'Greenbond',      :hit_die => '1d6')
@@ -38,6 +16,7 @@ class AddD20Data < ActiveRecord::Migration
   end
 
   def self.create_feat
+    Feat.delete_all
     GeneralFeat.create(:name => 'Ability Focus')
     GeneralFeat.create(:name => 'Aid Spellcasting')
     GeneralFeat.create(:name => 'Armor Proficiency, Exotic')
@@ -184,43 +163,8 @@ class AddD20Data < ActiveRecord::Migration
     TalentFeat.create(:name => 'Wealthy')
   end
 
-  def self.create_prop
-    @@str = Prop.create(:name => 'Strength', :abbreviation => 'STR', :prop_type => 'I')
-    @@dex = Prop.create(:name => 'Dexterity', :abbreviation => 'DEX', :prop_type => 'I')
-    @@con = Prop.create(:name => 'Constitution', :abbreviation => 'CON', :prop_type => 'I')
-    @@int = Prop.create(:name => 'Intelligence', :abbreviation => 'INT', :prop_type => 'I')
-    @@wis = Prop.create(:name => 'Wisdom', :abbreviation => 'WIS', :prop_type => 'I')
-    @@cha = Prop.create(:name => 'Charisma', :abbreviation => 'CHA', :prop_type => 'I')
-    Prop.create(:name => 'Base Attack Bonus', :abbreviation => 'BAB', :prop_type => 'I')
-    Prop.create(:name => 'Character Level', :abbreviation => 'Lvl', :prop_type => 'I')
-    Prop.create(:name => 'Hero Points', :abbreviation => 'Hero Pts', :prop_type => 'I')
-    Prop.create(:name => 'Reflex Save Base', :abbreviation => 'Ref Save Base', :prop_type => 'I')
-    Prop.create(:name => 'Reflex Save Misc', :abbreviation => 'Ref Save Misc', :prop_type => 'I')
-    Prop.create(:name => 'Fortitude Save Base', :abbreviation => 'Fort Save Base', :prop_type => 'I')
-    Prop.create(:name => 'Fortitude Save Misc', :abbreviation => 'Fort Save Misc', :prop_type => 'I')
-    Prop.create(:name => 'Will Save Base', :abbreviation => 'Will Save Base', :prop_type => 'I')
-    Prop.create(:name => 'Will Save Misc', :abbreviation => 'Will Save Misc', :prop_type => 'I')
-    Prop.create(:name => 'Hit Points', :abbreviation => 'HP', :prop_type => 'I')
-    Prop.create(:name => 'Height', :abbreviation => 'Ht', :prop_type => 'I')
-    Prop.create(:name => 'Weight', :abbreviation => 'Wt', :prop_type => 'I')
-    Prop.create(:name => 'Size', :abbreviation => 'Size', :prop_type => 'I')
-    Prop.create(:name => 'Speed', :abbreviation => 'Speed', :prop_type => 'I')
-    Prop.create(:name => 'Fly Speed', :abbreviation => 'Fly', :prop_type => 'I')
-    Prop.create(:name => 'Weapon Attack', :abbreviation => 'Weap Attack', :prop_type => 'I')
-    Prop.create(:name => 'Weapon Damage', :abbreviation => 'Weap Dmg', :prop_type => 'I')
-    Prop.create(:name => 'Weapon Range Increment', :abbreviation => 'Weap Rng Incr', :prop_type => 'I')
-    Prop.create(:name => 'Flying Maneuverability', :abbreviation => 'Flight Manuev', :prop_type => 'I')
-    Prop.create(:name => 'Swim Speed', :abbreviation => 'Swim Spd', :prop_type => 'I')
-    Prop.create(:name => 'Climb Speed', :abbreviation => 'Climb Spd', :prop_type => 'I')
-    Prop.create(:name => 'Caster Level', :abbreviation => 'Cast Lvl', :prop_type => 'I')
-    Prop.create(:name => 'Caster Key Ability', :abbreviation => 'Cast Key Abil', :prop_type => 'I')
-    Prop.create(:name => 'Max Spell Level -- Complex', :abbreviation => 'Max Spell Lvl', :prop_type => 'I')
-    Prop.create(:name => 'Wound Points', :abbreviation => 'Wounds', :prop_type => 'I')
-    Prop.create(:name => 'Subdual Damage', :abbreviation => 'Subdual', :prop_type => 'I')
-    Prop.create(:name => 'Spell Resistance', :abbreviation => 'SR', :prop_type => 'I')
-  end
-
   def self.create_races
+    Race.delete_all
     Race.create(:name => 'Human')
     Race.create(:name => 'Dracha')
     Race.create(:name => 'Faen')
@@ -233,6 +177,7 @@ class AddD20Data < ActiveRecord::Migration
   end
 
   def self.create_skill
+    Skill.delete_all
     Skill.create(:name => 'Alchemy', :prop_id => @@int, :needs_training => true)
     Skill.create(:name => 'Appraise', :prop_id => @@int, :needs_training => false)
     Skill.create(:name => 'Balance', :prop_id => @@dex, :needs_training => false,
@@ -303,3 +248,9 @@ class AddD20Data < ActiveRecord::Migration
   end
 
 end
+
+
+AESeeder.create_char_classes
+AESeeder.create_feat
+AESeeder.create_races
+AESeeder.create_skill
